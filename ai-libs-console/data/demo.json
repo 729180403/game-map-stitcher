@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "product": "AI-LiBs",
+    "version": "v0-mock",
+    "note": "Hardcoded demo from store docs; not book-PDF ingest."
+  },
+  "questions": [
+    {
+      "id": "q-fill",
+      "label": "锂离子电池注液机理是什么？电解液为何能快速吸入？",
+      "short": "注液与快速吸入",
+      "nodes": ["MT.PROC.FILL", "MT.MAT.ELYT", "MT.PKG.AL.WRINKLE.POSTFILL"],
+      "panels": {
+        "mechanism": {
+          "title": "注液机理",
+          "summary": "注液是把定量电解液送入已封气袋的软包电芯，并启动对电极/隔膜孔隙的浸润。快速「吸入」主要靠真空压差 + 毛细润湿，不是高压硬灌。",
+          "chain": [
+            {
+              "id": "MT.PROC.FILL",
+              "name": "注液工序",
+              "def": "电解液定量进入电芯并开始浸润。",
+              "vars": ["注液量", "真空度", "静置时间", "温度"]
+            },
+            {
+              "id": "MT.MAT.ELYT",
+              "name": "电解液体系",
+              "def": "溶剂+锂盐+添加剂：离子传导与界面成膜介质；粘度与润湿性决定吸入速度。",
+              "vars": ["粘度", "电导率", "水分", "HF"]
+            },
+            {
+              "id": "MT.PKG.AL.WRINKLE.POSTFILL",
+              "name": "注液后形貌",
+              "def": "抽真空/回气改变膜面支撑与内压后，原隐应力可外显（与横纹判定耦合）。",
+              "vars": ["注液量", "真空曲线", "回气", "静置姿态"]
+            }
+          ],
+          "whyFast": [
+            "抽真空降低孔隙气压 → 注液后 ΔP 把电解液「拉」进孔隙",
+            "溶剂对电极/隔膜孔隙的润湿角与毛细力推动液面前沿",
+            "适当升温降低粘度、加速扩散；残气与过粘会显著拖慢吸入"
+          ],
+          "hint": "推理先定工序时点（注液中 / 静置 / 化成前），再谈外观或浸润不良，勿直接套「注液量越大越好」。"
+        },
+        "diagram": {
+          "title": "注液与浸润示意",
+          "caption": "①抽真空 → ②定量注液 → ③毛细浸润。示意非按比例；未标实测 g / Pa。",
+          "src": "assets/diagrams/electrolyte-fill-wetting-v0.svg",
+          "nodeId": "MT.PROC.FILL",
+          "actions": ["生成示意图", "对照铝塑膜截面"]
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": true,
+          "card": {
+            "card_id": "KC-SAMPLE-FILL-WETTING-001",
+            "title": "[SAMPLE] 注液后浸润偏慢伴随气袋回弹异常",
+            "phenomenon": "注液称重达标，但静置窗口内极片湿润前沿偏慢；气袋回弹形态与基线不一致，下游化成气量波动。",
+            "causes": [
+              "真空度不足或保压泄漏 → 孔隙残气多",
+              "电解液粘度偏高 / 注液温度偏低",
+              "电极压实过高导致有效孔隙连通变差"
+            ],
+            "mechanism": "吸入速度由 ΔP 与毛细润湿共同决定。残气占据孔隙或粘度升高时，液面前沿推进变慢；膜面内压路径改变可牵动外观（POSTFILL）。",
+            "risk": "局部干区 → 化成界面不均、阻抗偏高；极端时与漏液/外观误判纠缠。",
+            "countermeasures": [
+              "核对真空曲线与腔体泄漏点检",
+              "按溶剂窗口复核粘度与注液温度",
+              "浸润剖检 + 称重复测；必要时单因子扰动注液量/静置"
+            ],
+            "mechanism_node_id": "MT.PROC.FILL",
+            "verification_status": "open",
+            "confidence": 0.5,
+            "source": "synthetic-sample"
+          },
+          "failLinks": ["MT.FAIL.SWELL", "MT.FAIL.APPEAR", "MT.FAIL.CAP"]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "promptHint": "列出检测方法",
+          "methods": [
+            {
+              "id": "VM-ELR-CLN-01",
+              "name": "外观湿迹 / 气味分级",
+              "use": "注液后、二封前：湿润覆盖是否均匀"
+            },
+            {
+              "id": "VM-THK-SEC-01",
+              "name": "膜 / 电芯厚度点检",
+              "use": "注液前后外形与气袋状态对照"
+            },
+            {
+              "id": "VM-DOE-01",
+              "name": "单因子扫描",
+              "use": "注液量 ±、静置时间、温度 — 看浸润前沿与气袋"
+            },
+            {
+              "id": "VM-DOE-04",
+              "name": "假设证伪清单",
+              "use": "先写判据再做试验：残气 vs 粘度 vs 压实"
+            },
+            {
+              "id": "VM-SPC-01",
+              "name": "过程控制图（封口/注液参数）",
+              "use": "真空度、注液量入图，防漂移"
+            }
+          ],
+          "management": [
+            "称重放行 + 静置 SOP 时点拍照",
+            "浸润不良批次隔离，勿直接调二封掩盖",
+            "与横纹外观共用「工序时点矩阵」避免误归因"
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-wrinkle",
+      "label": "软包铝塑膜侧边横纹是怎么来的？和二封拉力有什么关系？",
+      "short": "铝塑膜横纹 / 二封",
+      "nodes": ["MT.PKG.AL.WRINKLE.TRANSVERSE", "MT.PKG.AL.STACK", "MT.PKG.SEAL.2ND"],
+      "panels": {
+        "mechanism": {
+          "title": "横纹机理（深枝）",
+          "summary": "横纹是膜面在面内压缩/剪切或不均匀约束下的失稳褶皱。常见耦合：成型残余应力 + 热封边界约束 + 注液后内压变化。勿一上来断定「膜越厚越好」。",
+          "chain": [
+            {
+              "id": "MT.PKG.AL.FORMING",
+              "name": "冲坑减薄",
+              "def": "成型使 Al 局部减薄并累积残余应力；圆角与坑深是应力集中主控。",
+              "vars": ["坑深", "凸模圆角", "减薄率"]
+            },
+            {
+              "id": "MT.PKG.AL.WRINKLE.TRANSVERSE",
+              "name": "横纹",
+              "def": "大致垂直于主约束边的条纹状褶皱；多变量，时点决定因子优先级。",
+              "vars": ["出现工序时点", "纹距/纹深", "注液量", "膜批次"]
+            },
+            {
+              "id": "MT.PKG.AL.SEALIF",
+              "name": "热封界面",
+              "def": "CPP 在 T/P/t 下熔合；纹峰处铺展不足可拉低剥离力。",
+              "vars": ["封头温度", "压力", "时间", "重叠宽度"]
+            }
+          ],
+          "whyFast": [
+            "先定出现时点：成型后 / 一封后 / 注液后 / 二封后",
+            "再扰动单因子：注液量、静置、二封 T/P/t、同批次膜对照",
+            "必要时剖检纹底是否伤 Al（外观≠漏液，但可同源）"
+          ],
+          "hint": "三行关联示例：↑ FORMING + FILL + SEAL.2ND → ● TRANSVERSE → ↓ APPEAR / 可能 BARRIER。"
+        },
+        "diagram": {
+          "title": "铝塑膜多层截面",
+          "caption": "外→内：ON/PA → adhesive → Al → adhesive → CPP。横纹应力时点图待补；本图提供层序锚点。",
+          "src": "assets/diagrams/al-laminate-cross-section-v0.svg",
+          "nodeId": "MT.PKG.AL.STACK",
+          "actions": ["生成示意图", "查看注液示意"]
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": true,
+          "card": {
+            "card_id": "KC-SAMPLE-AL-LAMI-WRINKLE-001",
+            "title": "[SAMPLE] 软包铝塑膜侧边横纹伴随二封剥离力偏低",
+            "phenomenon": "冲坑/整形后侧边出现周期性横纹；同批次二封剥离力分布下移，低值接近内控下限，外观判退率上升。",
+            "causes": [
+              "冲坑拉伸比偏大，局部颈缩后 CPP 残留应力条带",
+              "二封温度窗口偏下限 + 压力不均，纹区有效熔接面积不足",
+              "膜批次模量偏软；模具 R 角磨损（间接）"
+            ],
+            "mechanism": "横纹是双向拉伸与模具约束下的局部失稳/厚度波动痕迹。纹峰 CPP 偏离名义窗口 → 热封铺展不足 → 剥离沿弱界面扩展。",
+            "risk": "密封裕度下降 → 干露/漏液风险；外观批量判退。",
+            "countermeasures": [
+              "复核拉伸比与 R 角；磨损超差换模",
+              "按膜厂家窗口回调二封 T/P/t；横纹件分层抽剥离力",
+              "DOE：拉伸比 × 热封温度"
+            ],
+            "mechanism_node_id": "MT.PKG.AL.WRINKLE.TRANSVERSE",
+            "verification_status": "open",
+            "confidence": 0.55,
+            "source": "synthetic-sample"
+          },
+          "failLinks": ["MT.FAIL.APPEAR", "MT.FAIL.LEAK", "MT.FAIL.CORRODE"]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "promptHint": "列出检测方法",
+          "methods": [
+            {
+              "id": "VM-VIS-DIM-01",
+              "name": "横纹 / 褶皱目视分级",
+              "use": "按工序时点标准板拍照分级"
+            },
+            {
+              "id": "VM-PEEL-SEAL-01",
+              "name": "二封热封剥离 / 拉力",
+              "use": "横纹件 vs 正常件分层对比"
+            },
+            {
+              "id": "VM-PEEL-SEAL-03",
+              "name": "铝塑膜层间剥离",
+              "use": "怀疑层合/来料结构时"
+            },
+            {
+              "id": "VM-THK-SEC-02",
+              "name": "封口截面冷镶 / 金相",
+              "use": "虚封、过熔、纹底是否伤 Al"
+            },
+            {
+              "id": "VM-DOE-04",
+              "name": "假设证伪清单",
+              "use": "时点矩阵 → 单因子 → 剖检 → 拉力分段"
+            }
+          ],
+          "management": [
+            "外观与拉力双门禁；勿只用终端拉力掩盖时点问题",
+            "IQC 膜批次与模具 R 角点检联动 SPC",
+            "NPI 新横纹优先走机理分支，再沉淀卡片"
+          ]
+        }
+      }
+    }
+  ]
+}
