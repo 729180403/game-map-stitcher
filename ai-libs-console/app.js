@@ -107,10 +107,13 @@ function renderCard(p) {
   const causes = (c.causes || []).map((x) => `<li>${escapeHtml(x)}</li>`).join("");
   const cm = (c.countermeasures || []).map((x) => `<li>${escapeHtml(x)}</li>`).join("");
   const fails = (p.failLinks || []).map((f) => `<span class="chip">${escapeHtml(f)}</span>`).join(" ");
+  const badge = p.sample
+    ? `<span class="badge">SAMPLE · mock</span>`
+    : `<span class="badge book">BOOK · ${escapeHtml(p.provenance || c.card_id || "round1")}</span>`;
   root.innerHTML = `
     <h3>${escapeHtml(p.title)}</h3>
     <div class="card-block">
-      ${p.sample ? `<span class="badge">SAMPLE · mock</span>` : ""}
+      ${badge}
       <h4 style="margin:0 0 0.4rem;font-family:var(--font-display);font-size:1.05rem">${escapeHtml(c.title)}</h4>
       <p class="summary" style="margin-bottom:0.6rem"><strong style="color:var(--ink)">现象</strong> — ${escapeHtml(c.phenomenon)}</p>
       <p class="summary" style="margin-bottom:0.4rem"><strong style="color:var(--ink)">机理</strong></p>
@@ -124,6 +127,7 @@ function renderCard(p) {
         <span>status: ${escapeHtml(c.verification_status)}</span>
         <span>confidence: ${escapeHtml(String(c.confidence))}</span>
         <span>node: ${escapeHtml(c.mechanism_node_id)}</span>
+        <span>id: ${escapeHtml(c.card_id)}</span>
       </div>
       <div style="margin-top:0.75rem">${fails}</div>
     </div>
@@ -142,9 +146,12 @@ function renderVerify(p) {
     )
     .join("");
   const mgmt = (p.management || []).map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+  const note =
+    p.sourceNote ||
+    "方法条目来自 Verification Methods Catalog；书源轮次可深填判据。";
   root.innerHTML = `
     <h3>${escapeHtml(p.title)}</h3>
-    <p class="summary">方法条目来自 Verification Methods Catalog v0（stub）；书 PDF 后可深填判据。</p>
+    <p class="summary">${escapeHtml(note)}</p>
     <table class="method-table">
       <thead><tr><th>ID</th><th>方法</th><th>用途</th></tr></thead>
       <tbody>${rows}</tbody>
@@ -168,14 +175,40 @@ function showPanel(name) {
   });
 }
 
+const KEYWORD_HINTS = [
+  "注液",
+  "吸入",
+  "浸润",
+  "电解液",
+  "真空",
+  "热封",
+  "铝塑",
+  "二封",
+  "拉力",
+  "虚封",
+  "过熔",
+  "窗口",
+  "涂布",
+  "拉丝",
+  "铅笔道",
+  "弯液面",
+  "过滤",
+  "辊压",
+  "卷绕",
+  "fill",
+  "seal",
+  "coat",
+  "wetting"
+];
+
 function matchQuestion(text) {
   const t = text.trim().toLowerCase();
   if (!t) return null;
   const scored = demo.questions.map((q) => {
-    const hay = `${q.label} ${q.short} ${(q.nodes || []).join(" ")}`.toLowerCase();
+    const hay = `${q.label} ${q.short} ${(q.nodes || []).join(" ")} ${q.id}`.toLowerCase();
     let score = 0;
     if (hay.includes(t) || t.includes(q.short.toLowerCase())) score += 5;
-    for (const key of ["注液", "吸入", "浸润", "电解液", "横纹", "铝塑", "二封", "拉力", "fill", "wrinkle"]) {
+    for (const key of KEYWORD_HINTS) {
       if (t.includes(key) && hay.includes(key)) score += 2;
     }
     return { q, score };
@@ -192,8 +225,8 @@ function onAsk() {
     return;
   }
   $("#empty-hint").hidden = false;
-  $("#empty-hint").textContent =
-    "v0 仅覆盖 2 条样例（注液吸入、铝塑膜横纹）。请点选样例，或输入含「注液」「横纹」等关键词。";
+  const n = demo?.questions?.length ?? 0;
+  $("#empty-hint").textContent = `当前书源 demo 覆盖 ${n} 条样例（注液浸润、热封窗口、涂布拉丝）。请点选样例，或输入含「注液」「热封」「涂布」等关键词。`;
   activeQuestionId = null;
   PANEL_IDS.forEach((id) => {
     $(`#panel-${id}`).innerHTML = "";

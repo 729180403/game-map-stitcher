@@ -439,6 +439,13 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.badge.book {
+  background: rgba(91, 124, 153, 0.28);
+  color: #b7cfe0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
 .meta-row {
   display: flex;
   flex-wrap: wrap;

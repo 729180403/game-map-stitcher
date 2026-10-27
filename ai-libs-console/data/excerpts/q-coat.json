@@ -1,0 +1,118 @@
+{
+  "id": "q-coat",
+  "label": "涂布拉丝/铅笔道是怎么形成的？和过滤、弯液面有什么关系？",
+  "short": "涂布拉丝（书源）",
+  "source": {
+    "round": "book-round1",
+    "refs": [
+      "docs/books/li-ion-mfg-process/cards/KC-BOOK-COAT-STREAK-001.md",
+      "docs/mechanism-tree-from-book-v1.md §5.2 COAT",
+      "docs/verification-methods-from-book-v1.md VM-COAT-01/02/04",
+      "media/li-ion-diagrams/electrode-coat-dry-press-wind-v0.svg"
+    ]
+  },
+  "nodes": ["MT.PROC.COAT", "MT.PROC.PRESS", "MT.PROC.ASSY.WIND"],
+  "panels": {
+    "mechanism": {
+      "title": "涂布弯液面局部破坏 → 机向细条道",
+      "summary": "拉丝/铅笔道是沿涂布方向的细条纹，多由颗粒或气泡污染涂布头表面或下游弯液面引起，属于局部缺陷，不等同于整体毛细稳定性失稳。上游浆料过滤与机头卫生直接决定条道密度。",
+      "chain": [
+        {
+          "id": "MT.PROC.COAT",
+          "name": "涂布 / 干燥",
+          "def": "条缝或挤压模头在集流体上形成湿膜；涂头精度、线速、张力与干燥曲线决定面密度与流平。颗粒/气泡撞击下游弯液面可拖出细条道。",
+          "vars": ["头几何/清洁度", "线速与间隙", "浆料过滤/消泡", "干燥温区"]
+        },
+        {
+          "id": "MT.PROC.PRESS",
+          "name": "辊压（下游放大）",
+          "def": "条道或缺料区进入辊压后易掉粉、粘辊或局部露箔放大；过高压实还会恶化后续注液浸润。",
+          "vars": ["辊缝", "压实密度", "板形"]
+        },
+        {
+          "id": "MT.PROC.ASSY.WIND",
+          "name": "卷绕（主线末端）",
+          "def": "极片主线示意的末端工序；涂辊缺陷流入卷绕抬高短路与对齐风险。",
+          "vars": ["张力", "纠偏", "覆盖对齐"]
+        }
+      ],
+      "whyFast": [
+        "加强头前过滤与头清洁后条道密度应下降",
+        "故意引入标定颗粒应可复现条道（证伪清洁度假设）",
+        "多层涂布时减小层间流速差，避免冲击放大"
+      ],
+      "hint": "先分型：铅笔道（局部污染）vs 纵/横条道（毛细窗口+振动）。勿一上来只调线速。"
+    },
+    "diagram": {
+      "title": "极片主线：涂布→干燥→辊压→卷绕",
+      "caption": "书对齐示意（涂布干燥 / 辊压 / 卷绕）。拉丝发生在涂布弯液面；下游辊压与卷绕承接缺陷放大。非按比例。",
+      "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+      "nodeId": "MT.PROC.COAT",
+      "actions": ["生成示意图", "对照注液示意"]
+    },
+    "card": {
+      "title": "知识卡片 / 失效挂钩",
+      "sample": false,
+      "provenance": "KC-BOOK-COAT-STREAK-001 · 教材改写",
+      "card": {
+        "card_id": "KC-BOOK-COAT-STREAK-001",
+        "title": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+        "phenomenon": "沿涂布方向出现细条纹（拉丝/铅笔道）；与整体毛细稳定性无关的局部缺陷。",
+        "causes": [
+          "片幅/浆料/空气夹带颗粒或气泡污染涂布头表面或下游弯液面",
+          "干粘结剂在条缝出口/间隙残留；涂布头缺口等效颗粒",
+          "多层涂布相邻层流速差过大放大冲击（间接）"
+        ],
+        "mechanism": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+        "risk": "局部缺料/露箔 → 容量与安全风险；外观报废；不良流入辊压放大掉粉。",
+        "countermeasures": [
+          "浆料过滤 + 涂布头处二次过滤；消泡；机头卫生防锈",
+          "片幅清洁器；适当加宽条缝/间隙；减小层间流速差",
+          "在线清除污染"
+        ],
+        "mechanism_node_id": "MT.PROC.COAT",
+        "verification_status": "open",
+        "confidence": 0.62,
+        "source": "literature-book-round1"
+      },
+      "failLinks": ["MT.FAIL.APPEAR", "MT.FAIL.CAP", "MT.FAIL.SC"]
+    },
+    "verify": {
+      "title": "检测验证与管理",
+      "promptHint": "列出检测方法",
+      "sourceNote": "条目改写自 verification-methods-from-book-v1（VM-COAT / 过滤 / 面密度）。",
+      "methods": [
+        {
+          "id": "VM-COAT-01",
+          "name": "涂布弊病分型点检",
+          "use": "拉丝/铅笔道 vs 纵横向条道 vs 针孔，标准板分级"
+        },
+        {
+          "id": "VM-SLURRY-FILT-01",
+          "name": "浆料过滤 / 细度复核",
+          "use": "头前与二次过滤完整性；气泡与团聚负荷"
+        },
+        {
+          "id": "VM-COAT-02",
+          "name": "润湿与流平窗口",
+          "use": "排除整体毛细失稳后再盯局部污染"
+        },
+        {
+          "id": "VM-COAT-04",
+          "name": "面密度 / 涂布量点检",
+          "use": "条道区局部缺料是否落入 SPC 下限"
+        },
+        {
+          "id": "VM-DOE-05",
+          "name": "缺陷驱动窗口试验",
+          "use": "过滤目数 × 头清洁频次 × 线速，对条道密度"
+        }
+      ],
+      "management": [
+        "机头卫生与过滤压差入点检；换型清残胶",
+        "条道批次隔离，勿流入辊压掩盖露箔",
+        "与浆料批号、片幅清洁器状态联动追溯"
+      ]
+    }
+  }
+}
