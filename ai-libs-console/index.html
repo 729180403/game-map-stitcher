@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-LiBs · 问答台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <p class="hero-kicker">锂电垂直智能体 · book-round1 可点击原型</p>
+    <h1 class="brand">AI-LiBs</h1>
+    <p class="hero-lead">机理大树推理 · 知识卡片记忆 · 专业示意图 — 不是聊天窗堆答案。</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#console">打开问答台</a>
+      <button type="button" class="btn ghost" id="btn-sample-fill">试问：注液为何能快速吸入？</button>
+    </div>
+  </header>
+
+  <main class="console" id="console">
+    <section class="ask-rail" aria-label="提问区">
+      <h2 class="section-label">提问</h2>
+      <label class="ask-label" for="ask-input">关键词检索知识卡，或点选样例</label>
+      <div class="ask-row">
+        <input id="ask-input" type="text" placeholder="例如：辊压 / 毛刺 / 水分 / 注液浸润…" autocomplete="off" />
+        <button type="button" class="btn primary" id="btn-ask">询问</button>
+      </div>
+      <div class="search-hits" id="search-hits" hidden></div>
+      <div class="sample-list" id="sample-list" role="list"></div>
+      <p class="mock-note">当前为 <strong>book-round1 + 卡检索</strong>：保留 3 条样例；可关键词检索 21 张书源知识卡（改写摘要，非原文整段粘贴）。</p>
+    </section>
+
+    <section class="answer-stage" aria-label="回答分栏">
+      <div class="answer-toolbar">
+        <h2 class="section-label" id="answer-title">回答</h2>
+        <div class="panel-switch" role="tablist" aria-label="分栏">
+          <button type="button" class="tab active" role="tab" aria-selected="true" data-panel="mechanism">机理</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-panel="diagram">示意图</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-panel="card">知识卡片/失效</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-panel="verify">检测验证与管理</button>
+        </div>
+        <div class="prompt-actions">
+          <button type="button" class="btn compact" data-prompt="diagram">生成示意图</button>
+          <button type="button" class="btn compact" data-prompt="verify">列出检测方法</button>
+        </div>
+      </div>
+
+      <div class="node-chips" id="node-chips" hidden></div>
+
+      <div class="panel-grid">
+        <article class="panel active" id="panel-mechanism" data-panel="mechanism" role="tabpanel"></article>
+        <article class="panel" id="panel-diagram" data-panel="diagram" role="tabpanel" hidden></article>
+        <article class="panel" id="panel-card" data-panel="card" role="tabpanel" hidden></article>
+        <article class="panel" id="panel-verify" data-panel="verify" role="tabpanel" hidden></article>
+      </div>
+
+      <p class="empty-hint" id="empty-hint">从左侧点选样例问题，或输入关键词后点「询问」。</p>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>AI-LiBs console · book-round1</span>
+    <a href="#top">回顶</a>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

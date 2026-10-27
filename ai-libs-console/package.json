@@ -1,0 +1,13 @@
+{
+  "name": "ai-libs-console",
+  "version": "0.3.0",
+  "private": true,
+  "description": "AI-LiBs clickable Q&A console — book-round1 demos + 21-card keyword search",
+  "scripts": {
+    "build:cards": "node scripts/build-card-index.mjs",
+    "build:demo": "node scripts/build-demo.mjs",
+    "build": "npm run build:cards && npm run build:demo",
+    "start": "npm run build && npx --yes serve -l 5173 .",
+    "serve": "npx --yes serve -l 5173 ."
+  }
+}

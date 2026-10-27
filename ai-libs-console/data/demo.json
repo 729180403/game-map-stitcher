@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "product": "AI-LiBs",
+    "version": "v1-book-round1-search",
+    "note": "Generated from data/excerpts/* — curated paraphrases of book-round1 store cards / mechanism / VM / diagrams. Not verbatim copyrighted book text. Companion: data/card-index.json (21-card keyword search).",
+    "generatedBy": "scripts/build-demo.mjs",
+    "storeRefs": [
+      "docs/book-ingest-round1-summary.md",
+      "docs/mechanism-tree-from-book-v1.md",
+      "docs/books/li-ion-mfg-process/cards/",
+      "docs/verification-methods-from-book-v1.md",
+      "media/li-ion-diagrams/",
+      "docs/qa-web-prototype-search-v1.md"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q-fill",
+      "label": "锂离子电池注液机理是什么？电解液为何能快速吸入？",
+      "short": "注液与浸润（书源）",
+      "source": {
+        "round": "book-round1",
+        "refs": [
+          "docs/mechanism-tree-from-book-v1.md §2 FILL",
+          "docs/books/li-ion-mfg-process/cards/KC-BOOK-FILL-WET-001.md",
+          "docs/verification-methods-from-book-v1.md §E",
+          "media/li-ion-diagrams/electrolyte-fill-wetting-v1.svg"
+        ]
+      },
+      "nodes": [
+        "MT.PROC.FILL",
+        "MT.PROC.FILL.FLOW",
+        "MT.PROC.FILL.WET",
+        "MT.PROC.FILL.DOSE"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "注液 = 流体输送 + 孔隙浸润",
+          "summary": "书源定界：注液是把计量电解液送入已干燥电芯（壳外→壳内流体输送），并完成极片/隔膜/颗粒孔隙尺度的浸润。快速「吸入」主要靠真空压差与毛细/吸附润湿；未充分浸润不宜化成，否则局部化成不足、封口后易气胀。",
+          "chain": [
+            {
+              "id": "MT.PROC.FILL.FLOW",
+              "name": "流体输送",
+              "def": "注液孔接真空，壳内负压；电解液靠 Δp（亦可管侧加压）流入。加压过大可致壳体变形。设备常见转盘计量 vs 真空倒吸。",
+              "vars": [
+                "真空度 Δp",
+                "真空保持时间",
+                "管侧辅助压力",
+                "惰气回压"
+              ]
+            },
+            {
+              "id": "MT.PROC.FILL.WET",
+              "name": "浸润（核心）",
+              "def": "电解液经极片-隔膜缝隙进入隔膜孔与颗粒间/内孔隙至充分润湿。毛细可助可阻（渐扩孔、蜂腰、墨水瓶孔）；微孔靠吸附扩散，宏观流动近停。",
+              "vars": [
+                "孔径/曲折度",
+                "粘度 μ",
+                "接触角 θ",
+                "压实与极片宽厚",
+                "静置时间"
+              ]
+            },
+            {
+              "id": "MT.PROC.FILL.DOSE",
+              "name": "注液量窗口",
+              "def": "可充装上限由封装净空决定；量少→浸润不足与 IR↑，过量→副反应/产气与安全风险。勿孤立追「多注就好」。",
+              "vars": [
+                "设计注液量",
+                "活性充填/压实",
+                "电解液密度",
+                "壳体型号"
+              ]
+            }
+          ],
+          "whyFast": [
+            "增 Δp / 延真空保持 → 加快浸润；孔径减半则流动显著变慢",
+            "θ<90° 均孔时毛细多促进；过高压实或电芯过紧会堵渗液通道",
+            "注液后必须静置；减宽/减厚/降压实/降曲折度可缩短充分浸润时间"
+          ],
+          "hint": "推理先落点 FILL.WET，再回溯 FLOW/DOSE/PRESS/ASSY；外观横纹可并行挂 POSTFILL，勿一上来只调注液量。"
+        },
+        "diagram": {
+          "title": "注液与浸润示意（书对齐 v1）",
+          "caption": "A 流体输送（真空压差）→ B 毛细/吸附浸润 → 注液量窗口。示意非按比例；挂载 FILL.FLOW / WET / DOSE。",
+          "src": "assets/diagrams/electrolyte-fill-wetting-v1.svg",
+          "nodeId": "MT.PROC.FILL",
+          "actions": [
+            "生成示意图",
+            "对照极片主线"
+          ]
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-FILL-WET-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-FILL-WET-001",
+            "title": "注液浸润不足：局部化成不均与气胀",
+            "phenomenon": "注液后静置不足即化成；局部化成不足、封口后气胀、性能离散。",
+            "causes": [
+              "真空压差/保压时间不足；孔隙过小曲折度高使流量骤降",
+              "毛细在变径/墨水瓶孔中阻滞",
+              "过高压注导致壳体变形；极片过宽过厚高压实（间接）"
+            ],
+            "mechanism": "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+            "risk": "化成不均、气胀、界面阻抗高；下游分容淘汰与外观应力。",
+            "countermeasures": [
+              "足够真空与静置；必要时分步注液",
+              "设计端减宽/减厚/降压实/降曲折度促浸润",
+              "避免注液管过压变形"
+            ],
+            "mechanism_node_id": "MT.PROC.FILL",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SWELL",
+            "MT.PROC.FORM",
+            "MT.FAIL.CAP"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "promptHint": "列出检测方法",
+          "sourceNote": "条目改写自 verification-methods-from-book-v1（注液/水分/化成分容相关）。",
+          "methods": [
+            {
+              "id": "VM-FILL-MASS-01",
+              "name": "注液称重 SPC",
+              "use": "注液前后质量；书强调量差过大可显著影响初容量与循环"
+            },
+            {
+              "id": "VM-FILL-VAC-01",
+              "name": "真空曲线 / 壳体变形点检",
+              "use": "核对 Δp 与保压；过压注液查壳体鼓胀或测厚"
+            },
+            {
+              "id": "VM-FILL-WET-01",
+              "name": "静置×真空 DOE + 剖检润湿前沿",
+              "use": "证伪浸润不足：同批次剖检与化成均匀性/气胀率对照"
+            },
+            {
+              "id": "VM-H2O-01",
+              "name": "水分与露点（KF / 干燥曲线）",
+              "use": "区分水分产气气胀 vs 纯浸润/密封问题"
+            },
+            {
+              "id": "VM-GRADE-01",
+              "name": "分容全检（容量 / IR / 厚度 / 外观）",
+              "use": "浸润不良批次的一致性与气胀厚度门禁"
+            }
+          ],
+          "management": [
+            "称重放行 + 静置 SOP；未充分浸润勿提前化成",
+            "浸润不良批次隔离，勿用二封/整形掩盖气胀根因",
+            "与压实密度、卷绕松紧交叉 DOE，再沉淀卡片闭环"
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-seal",
+      "label": "软包铝塑膜热封窗口怎么定？虚封/过熔和拉力有什么关系？",
+      "short": "铝塑热封窗口（书源）",
+      "source": {
+        "round": "book-round1",
+        "refs": [
+          "docs/books/li-ion-mfg-process/cards/KC-BOOK-SEAL-WINDOW-001.md",
+          "docs/verification-methods-from-book-v1.md VM-PEEL-SEAL-01/05",
+          "media/li-ion-diagrams/al-laminate-cross-section-v0.svg"
+        ]
+      },
+      "nodes": [
+        "MT.PKG.AL.SEALIF",
+        "MT.PKG.SEAL",
+        "MT.PKG.AL.STACK"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "热封窗口：熔合 vs 过熔",
+          "summary": "铝塑膜内层 CPP/极耳胶在温度-压力-时间窗口内熔合缠结成封。热量经 ON→Al→CPP 传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）。窗外则虚封（拉力不足）或过熔溢出/微裂纹/烧焦。",
+          "chain": [
+            {
+              "id": "MT.PKG.AL.STACK",
+              "name": "铝塑膜层序",
+              "def": "外→内常见 ON/PA → 胶 → Al → 胶 → CPP。热封发生在内层聚合物界面；截面图提供层序锚点。",
+              "vars": [
+                "膜批次熔限",
+                "层间粘结",
+                "Al 厚度"
+              ]
+            },
+            {
+              "id": "MT.PKG.AL.SEALIF",
+              "name": "热封界面",
+              "def": "窗口内大分子扩散缠结成封；低 T/t/P → 虚封；高 T/P 或超时 → PP 挤出、半切断、拉力峰后回落。",
+              "vars": [
+                "封头温度",
+                "压力",
+                "时间",
+                "封边宽度"
+              ]
+            },
+            {
+              "id": "MT.PKG.SEAL",
+              "name": "封口工序（含二封）",
+              "def": "侧/底与顶封（极耳胶）窗口不同；凹凸模控封后厚度，防极耳触铝箔短路。注液污染封口会显著拉低密封裕度。",
+              "vars": [
+                "侧底 vs 顶封设定",
+                "凹凸模",
+                "封口清洁度"
+              ]
+            }
+          ],
+          "whyFast": [
+            "先按 DSC/TG 定熔限，再 DOE 扫 T×t×P 找拉力峰与外观边界",
+            "书述经验带需按本厂膜材重标定（侧/底与顶封设定常不同）",
+            "拉力只是结果：同时看烧焦、溢料、半切断与漏液模式"
+          ],
+          "hint": "虚封 ≠ 过熔；先分型再调参。电解液湿封与干封要分开证伪。"
+        },
+        "diagram": {
+          "title": "铝塑膜多层截面",
+          "caption": "外→内：ON/PA → adhesive → Al → adhesive → CPP。热封发生在内层；横纹/应力时点图另挂，本图锚定层序。",
+          "src": "assets/diagrams/al-laminate-cross-section-v0.svg",
+          "nodeId": "MT.PKG.AL.STACK",
+          "actions": [
+            "生成示意图",
+            "查看注液示意"
+          ]
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SEAL-WINDOW-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SEAL-WINDOW-001",
+            "title": "铝塑膜热封窗口失配致虚封/过熔漏液",
+            "phenomenon": "软包热封后拉力不足、漏液、封边变形烧焦或半切断；极耳处更易出问题。",
+            "causes": [
+              "T/P/t 低于窗口：CPP 未充分熔合",
+              "温度近上限或超时：PP 过熔溢出、微裂纹、烧焦变形",
+              "压力过低强度不够；过高挤走热封料形成半切断",
+              "注液残留污染封口；极耳被电解液长期腐蚀（间接）"
+            ],
+            "mechanism": "热量经多层传递至 CPP/极耳胶界面；窗口内扩散缠结成封，窗外虚封或过熔。可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶常需更高设定（须按本厂膜材重标定）。",
+            "risk": "漏液投诉；极耳触 Al 短路；长期腐蚀。",
+            "countermeasures": [
+              "按 DSC/TG 定熔限再 DOE 拉力窗口；宁低时长短热辐射影响",
+              "凹凸模控封后厚度，防极耳触铝箔短路",
+              "清洁封口、控预留位；铁氟龙/硅胶条保护封头"
+            ],
+            "mechanism_node_id": "MT.PKG.AL.SEALIF",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.LEAK",
+            "MT.FAIL.CORRODE",
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "promptHint": "列出检测方法",
+          "sourceNote": "条目改写自 verification-methods-from-book-v1（VM-PEEL-SEAL / LEAK / DOE）。",
+          "methods": [
+            {
+              "id": "VM-PEEL-SEAL-01",
+              "name": "铝塑热封拉力 / 剥离",
+              "use": "拉力随 T/P/t；对照烧焦/溢料/半切断外观"
+            },
+            {
+              "id": "VM-PEEL-SEAL-05",
+              "name": "热封工艺窗口 DOE",
+              "use": "T×t×P 矩阵 → 拉力 + 漏液 + 外观，冻结前定窗口"
+            },
+            {
+              "id": "VM-LEAK-01",
+              "name": "气密 / 漏液筛查",
+              "use": "区分密封漏 vs 正常产气鼓胀；湿封单独跟踪"
+            },
+            {
+              "id": "VM-THK-SEC-02",
+              "name": "封口截面冷镶 / 金相",
+              "use": "虚封、过熔、极耳-Al 间距与半切断"
+            },
+            {
+              "id": "VM-SPC-05",
+              "name": "封口拉力入过程图",
+              "use": "膜批次切换与封头磨损漂移监控"
+            }
+          ],
+          "management": [
+            "膜批次 DSC/熔限变更触发窗口复核",
+            "外观与拉力双门禁；勿只用终端拉力掩盖湿封污染",
+            "顶封（极耳）与侧底封分窗管理"
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-coat",
+      "label": "涂布拉丝/铅笔道是怎么形成的？和过滤、弯液面有什么关系？",
+      "short": "涂布拉丝（书源）",
+      "source": {
+        "round": "book-round1",
+        "refs": [
+          "docs/books/li-ion-mfg-process/cards/KC-BOOK-COAT-STREAK-001.md",
+          "docs/mechanism-tree-from-book-v1.md §5.2 COAT",
+          "docs/verification-methods-from-book-v1.md VM-COAT-01/02/04",
+          "media/li-ion-diagrams/electrode-coat-dry-press-wind-v0.svg"
+        ]
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.PROC.PRESS",
+        "MT.PROC.ASSY.WIND"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "涂布弯液面局部破坏 → 机向细条道",
+          "summary": "拉丝/铅笔道是沿涂布方向的细条纹，多由颗粒或气泡污染涂布头表面或下游弯液面引起，属于局部缺陷，不等同于整体毛细稳定性失稳。上游浆料过滤与机头卫生直接决定条道密度。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "涂布 / 干燥",
+              "def": "条缝或挤压模头在集流体上形成湿膜；涂头精度、线速、张力与干燥曲线决定面密度与流平。颗粒/气泡撞击下游弯液面可拖出细条道。",
+              "vars": [
+                "头几何/清洁度",
+                "线速与间隙",
+                "浆料过滤/消泡",
+                "干燥温区"
+              ]
+            },
+            {
+              "id": "MT.PROC.PRESS",
+              "name": "辊压（下游放大）",
+              "def": "条道或缺料区进入辊压后易掉粉、粘辊或局部露箔放大；过高压实还会恶化后续注液浸润。",
+              "vars": [
+                "辊缝",
+                "压实密度",
+                "板形"
+              ]
+            },
+            {
+              "id": "MT.PROC.ASSY.WIND",
+              "name": "卷绕（主线末端）",
+              "def": "极片主线示意的末端工序；涂辊缺陷流入卷绕抬高短路与对齐风险。",
+              "vars": [
+                "张力",
+                "纠偏",
+                "覆盖对齐"
+              ]
+            }
+          ],
+          "whyFast": [
+            "加强头前过滤与头清洁后条道密度应下降",
+            "故意引入标定颗粒应可复现条道（证伪清洁度假设）",
+            "多层涂布时减小层间流速差，避免冲击放大"
+          ],
+          "hint": "先分型：铅笔道（局部污染）vs 纵/横条道（毛细窗口+振动）。勿一上来只调线速。"
+        },
+        "diagram": {
+          "title": "极片主线：涂布→干燥→辊压→卷绕",
+          "caption": "书对齐示意（涂布干燥 / 辊压 / 卷绕）。拉丝发生在涂布弯液面；下游辊压与卷绕承接缺陷放大。非按比例。",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "actions": [
+            "生成示意图",
+            "对照注液示意"
+          ]
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-COAT-STREAK-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-COAT-STREAK-001",
+            "title": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+            "phenomenon": "沿涂布方向出现细条纹（拉丝/铅笔道）；与整体毛细稳定性无关的局部缺陷。",
+            "causes": [
+              "片幅/浆料/空气夹带颗粒或气泡污染涂布头表面或下游弯液面",
+              "干粘结剂在条缝出口/间隙残留；涂布头缺口等效颗粒",
+              "多层涂布相邻层流速差过大放大冲击（间接）"
+            ],
+            "mechanism": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+            "risk": "局部缺料/露箔 → 容量与安全风险；外观报废；不良流入辊压放大掉粉。",
+            "countermeasures": [
+              "浆料过滤 + 涂布头处二次过滤；消泡；机头卫生防锈",
+              "片幅清洁器；适当加宽条缝/间隙；减小层间流速差",
+              "在线清除污染"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.APPEAR",
+            "MT.FAIL.CAP",
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "promptHint": "列出检测方法",
+          "sourceNote": "条目改写自 verification-methods-from-book-v1（VM-COAT / 过滤 / 面密度）。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/铅笔道 vs 纵横向条道 vs 针孔，标准板分级"
+            },
+            {
+              "id": "VM-SLURRY-FILT-01",
+              "name": "浆料过滤 / 细度复核",
+              "use": "头前与二次过滤完整性；气泡与团聚负荷"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "排除整体毛细失稳后再盯局部污染"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度 / 涂布量点检",
+              "use": "条道区局部缺料是否落入 SPC 下限"
+            },
+            {
+              "id": "VM-DOE-05",
+              "name": "缺陷驱动窗口试验",
+              "use": "过滤目数 × 头清洁频次 × 线速，对条道密度"
+            }
+          ],
+          "management": [
+            "机头卫生与过滤压差入点检；换型清残胶",
+            "条道批次隔离，勿流入辊压掩盖露箔",
+            "与浆料批号、片幅清洁器状态联动追溯"
+          ]
+        }
+      }
+    }
+  ]
+}

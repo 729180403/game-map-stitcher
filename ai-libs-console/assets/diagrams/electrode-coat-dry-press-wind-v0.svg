@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Electrode process line: coating drying calendaring winding</title>
+  <desc id="desc">Engineer schematic of slurry coat, dry, calendaring press, and winding assembly. For QA console. Schematic not to scale.</desc>
+  <defs>
+    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E8E4DC" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="560" fill="#F7F5F0"/>
+  <rect x="20" y="20" width="1060" height="520" fill="url(#grid2)" stroke="#D4CFC4" stroke-width="1"/>
+
+  <text x="40" y="52" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="18" font-weight="700" fill="#1A1A1A">极片主线示意 · Coat / Dry / Calender / Wind</text>
+  <text x="40" y="74" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#555555">书对齐 Ch5涂布干燥 / Ch6辊压 / Ch8卷绕叠片 | 挂载 MT.PROC.COAT · DRY · PRESS · ASSY.WIND | Schematic, not to scale</text>
+
+  <!-- Stage boxes -->
+  <!-- 1 COAT -->
+  <rect x="40" y="100" width="240" height="220" fill="#FFFFFF" stroke="#5B7C99" stroke-width="1.5"/>
+  <rect x="40" y="100" width="240" height="28" fill="#5B7C99"/>
+  <text x="160" y="120" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">1 涂布 COAT</text>
+
+  <!-- foil + slot die -->
+  <rect x="70" y="160" width="180" height="10" fill="#8A949E" stroke="#4A525A" stroke-width="0.8"/>
+  <text x="160" y="152" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">集流体 foil</text>
+  <!-- slot die -->
+  <path d="M120 190 L160 170 L200 190 L200 210 L120 210 Z" fill="#C4A574" stroke="#6E4E30" stroke-width="1"/>
+  <text x="160" y="226" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" font-weight="600" fill="#3D2E18">条缝/挤压模头</text>
+  <text x="160" y="242" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">Slot-die / extrusion</text>
+  <!-- wet film -->
+  <rect x="70" y="250" width="180" height="16" fill="#7BA3B8" opacity="0.85"/>
+  <text x="160" y="288" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#333333">湿膜面密度 / 流平</text>
+  <text x="160" y="304" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#8A4B2F">弊病: 厚薄条、针孔、边缘堆积</text>
+
+  <!-- arrow -->
+  <line x1="280" y1="210" x2="310" y2="210" stroke="#333333" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- 2 DRY -->
+  <rect x="310" y="100" width="240" height="220" fill="#FFFFFF" stroke="#A67C52" stroke-width="1.5"/>
+  <rect x="310" y="100" width="240" height="28" fill="#A67C52"/>
+  <text x="430" y="120" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">2 干燥 DRY</text>
+
+  <!-- oven zones -->
+  <rect x="340" y="155" width="180" height="70" fill="#F5EDE4" stroke="#A67C52" stroke-width="1"/>
+  <line x1="400" y1="155" x2="400" y2="225" stroke="#C4A574" stroke-width="1" stroke-dasharray="3 2"/>
+  <line x1="460" y1="155" x2="460" y2="225" stroke="#C4A574" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="370" y="180" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#6E4E30">区1</text>
+  <text x="430" y="180" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#6E4E30">区2</text>
+  <text x="490" y="180" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#6E4E30">区3</text>
+  <text x="430" y="208" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" font-weight="600" fill="#3D2E18">烘箱分区升温</text>
+  <rect x="340" y="240" width="180" height="12" fill="#8A949E"/>
+  <rect x="340" y="236" width="180" height="8" fill="#5B7C99"/>
+  <text x="430" y="278" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#333333">溶剂挥发 / 粘结网络定型</text>
+  <text x="430" y="294" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#8A4B2F">缺陷: 开裂、起皮、粘结剂迁移</text>
+  <text x="430" y="310" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">→ 水分控制挂钩 FORM/FILL</text>
+
+  <line x1="550" y1="210" x2="580" y2="210" stroke="#333333" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- 3 PRESS -->
+  <rect x="580" y="100" width="240" height="220" fill="#FFFFFF" stroke="#4A525A" stroke-width="1.5"/>
+  <rect x="580" y="100" width="240" height="28" fill="#4A525A"/>
+  <text x="700" y="120" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">3 辊压 PRESS</text>
+
+  <!-- rollers -->
+  <circle cx="660" cy="190" r="32" fill="#8A949E" stroke="#4A525A" stroke-width="1.5"/>
+  <circle cx="740" cy="190" r="32" fill="#8A949E" stroke="#4A525A" stroke-width="1.5"/>
+  <rect x="620" y="186" width="160" height="8" fill="#5B7C99"/>
+  <text x="700" y="244" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" font-weight="600" fill="#1A1A1A">压实密度 / 厚度 / 伸长</text>
+  <text x="700" y="262" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">Calendering: gap / force</text>
+  <text x="700" y="286" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#8A4B2F">过压实 → 孔隙↓ → 浸润变慢</text>
+  <text x="700" y="302" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">回弹、掉粉、脆性 → 分切毛刺</text>
+
+  <line x1="820" y1="210" x2="850" y2="210" stroke="#333333" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- 4 WIND -->
+  <rect x="850" y="100" width="210" height="220" fill="#FFFFFF" stroke="#2F4A5E" stroke-width="1.5"/>
+  <rect x="850" y="100" width="210" height="28" fill="#2F4A5E"/>
+  <text x="955" y="120" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">4 卷绕 WIND</text>
+
+  <!-- jellyroll -->
+  <circle cx="955" cy="195" r="40" fill="none" stroke="#5B7C99" stroke-width="6"/>
+  <circle cx="955" cy="195" r="28" fill="none" stroke="#C4A574" stroke-width="5"/>
+  <circle cx="955" cy="195" r="16" fill="none" stroke="#8A949E" stroke-width="4"/>
+  <circle cx="955" cy="195" r="6" fill="#A67C52"/>
+  <text x="955" y="260" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" font-weight="600" fill="#1A1A1A">卷芯 jellyroll</text>
+  <text x="955" y="278" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">张力 / 对齐 / 隔膜包覆</text>
+  <text x="955" y="300" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#8A4B2F">过紧 → FILL.WET 难渗</text>
+
+  <!-- Bottom coupling strip -->
+  <rect x="40" y="340" width="1020" height="160" fill="#FFFFFF" stroke="#C8C2B6" stroke-width="1"/>
+  <text x="56" y="366" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#1A1A1A">上下游耦合 (给 QA / 机理分栏用)</text>
+  <text x="56" y="390" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">SLURRY 流变/气泡 → COAT 面密度一致性 → DRY 水分与粘结剂分布 → PRESS 压实密度/孔隙 → ASSY 松紧</text>
+  <text x="56" y="412" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">→ FILL.WET 浸润速度与均匀性 → FORM 化成均一 / 产气 → 外观应力 (软包横纹等)</text>
+  <text x="56" y="440" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#2F4A5E">典型检测锚点: 面密度/湿膜厚 | 残水 | 压实密度与厚度 SPC | 对齐/短路检 | 注液称重与静置</text>
+  <text x="56" y="462" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#555555">对照书节: 5.4.3 涂布弊病 · 5.6.3 干燥缺陷 · 6.5 辊压 · 8.1 卷绕叠片 · 10.2.1 注液浸润</text>
+  <text x="56" y="484" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#777777">叠片 STACK 为并行装配路径，本图以卷绕为代表；软包 thrice-fold 另图。</text>
+
+  <text x="40" y="528" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#777777">AI-LiBs Diagram Agent · electrode-coat-dry-press-wind-v0.svg · media/li-ion-diagrams/</text>
+</svg>

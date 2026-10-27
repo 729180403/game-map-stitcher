@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="640" viewBox="0 0 980 640" role="img" aria-labelledby="title desc">
+  <title id="title">Electrolyte fill and wetting - refined schematic</title>
+  <desc id="desc">Two-stage fill: vacuum-driven fluid transport then capillary/adsorption wetting into electrode pores. Book-aligned schematic for QA console. Not to scale.</desc>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E8E4DC" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <linearGradient id="elyt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7BA3B8"/>
+      <stop offset="100%" stop-color="#4E7A8F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="980" height="640" fill="#F7F5F0"/>
+  <rect x="20" y="20" width="940" height="600" fill="url(#grid)" stroke="#D4CFC4" stroke-width="1"/>
+
+  <text x="40" y="52" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="18" font-weight="700" fill="#1A1A1A">注液与浸润 · Electrolyte Fill and Wetting</text>
+  <text x="40" y="74" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#555555">书对齐示意 (Ch10.2.1) | 挂载 MT.PROC.FILL.FLOW / WET / DOSE | Schematic, not to scale</text>
+
+  <!-- STAGE A: FLOW -->
+  <rect x="40" y="96" width="440" height="250" fill="#FFFFFF" stroke="#C8C2B6" stroke-width="1"/>
+  <text x="56" y="120" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#2F4A5E">A. 流体输送 FILL.FLOW</text>
+  <text x="56" y="138" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#555555">Vacuum-driven transport into cell cavity</text>
+
+  <!-- vacuum pump box -->
+  <rect x="56" y="156" width="88" height="48" rx="2" fill="#E8EEF2" stroke="#5B7C99" stroke-width="1.2"/>
+  <text x="100" y="176" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" font-weight="600" fill="#2F4A5E">真空系统</text>
+  <text x="100" y="192" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">Vacuum</text>
+
+  <line x1="144" y1="180" x2="190" y2="180" stroke="#333333" stroke-width="1.4" marker-end="url(#arr)"/>
+  <text x="167" y="172" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#333333">抽气</text>
+
+  <!-- pouch cell -->
+  <rect x="200" y="150" width="150" height="140" fill="#F0EBE3" stroke="#8A6E45" stroke-width="1.5"/>
+  <text x="275" y="168" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" font-weight="600" fill="#6E4E30">软包电芯腔体</text>
+  <!-- electrode stack hint -->
+  <rect x="220" y="178" width="110" height="14" fill="#5B7C99"/>
+  <rect x="220" y="194" width="110" height="8" fill="#C4A574"/>
+  <rect x="220" y="204" width="110" height="14" fill="#8A949E"/>
+  <rect x="220" y="220" width="110" height="8" fill="#C4A574"/>
+  <rect x="220" y="230" width="110" height="14" fill="#A67C52"/>
+  <text x="275" y="268" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">阴/隔/阳 stack</text>
+  <!-- fill hole -->
+  <circle cx="275" cy="150" r="6" fill="#4E7A8F" stroke="#2F4A5E" stroke-width="1"/>
+  <text x="275" y="142" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#2F4A5E">注液口</text>
+
+  <!-- electrolyte tank -->
+  <rect x="380" y="170" width="78" height="70" fill="url(#elyt)" stroke="#2F4A5E" stroke-width="1.2"/>
+  <text x="419" y="200" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">电解液</text>
+  <text x="419" y="216" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#E8EEF3">Electrolyte</text>
+  <line x1="380" y1="200" x2="350" y2="160" stroke="#4E7A8F" stroke-width="2"/>
+  <line x1="350" y1="160" x2="275" y2="156" stroke="#4E7A8F" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="320" y="148" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#2F4A5E">注液管</text>
+
+  <text x="56" y="318" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#333333">动力: Delta-p = p0 - p1 (真空度越高，吸入越快)</text>
+  <text x="56" y="334" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#555555">可选管侧加压加速；加压过大可致壳体变形 (示意警告)</text>
+
+  <!-- STAGE B: WETTING -->
+  <rect x="500" y="96" width="440" height="250" fill="#FFFFFF" stroke="#C8C2B6" stroke-width="1"/>
+  <text x="516" y="120" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#6E4E30">B. 浸润 FILL.WET</text>
+  <text x="516" y="138" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#555555">Into pores of electrode / separator / particles</text>
+
+  <!-- pore schematic -->
+  <rect x="530" y="160" width="200" height="110" fill="#F0EBE3" stroke="#8A6E45" stroke-width="1"/>
+  <!-- converging pore -->
+  <path d="M550 175 L610 195 L610 215 L550 235 Z" fill="#7BA3B8" stroke="#2F4A5E" stroke-width="1"/>
+  <text x="530" y="252" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#2F4A5E">孔径渐减: 毛细促浸润</text>
+  <!-- diverging -->
+  <path d="M640 195 L700 175 L700 235 L640 215 Z" fill="#C4A574" opacity="0.85" stroke="#6E4E30" stroke-width="1"/>
+  <text x="640" y="268" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#6E4E30">孔径渐增: 毛细可阻碍</text>
+
+  <!-- ink-bottle -->
+  <circle cx="860" cy="200" r="28" fill="none" stroke="#8A949E" stroke-width="2"/>
+  <rect x="852" y="160" width="16" height="20" fill="#F7F5F0" stroke="#8A949E" stroke-width="2"/>
+  <text x="860" y="250" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#4A525A">墨水瓶孔</text>
+  <text x="860" y="264" text-anchor="middle" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="9" fill="#555555">吸附/汽化慢渗</text>
+
+  <text x="516" y="300" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#333333">theta&lt;90 deg 均一孔: 毛细有益; 浸润时间 = 毛细 x 孔径限制</text>
+  <text x="516" y="316" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#555555">加速因素: 减宽/减厚、降压实、降曲折度 (书定性)</text>
+  <text x="516" y="332" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#555555">微孔 (&lt;2nm): 吸附扩散主导，宏观流动近停</text>
+
+  <!-- Arrow A to B -->
+  <line x1="480" y1="220" x2="500" y2="220" stroke="#333333" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- BOTTOM: dose + risk -->
+  <rect x="40" y="362" width="900" height="100" fill="#FFFFFF" stroke="#C8C2B6" stroke-width="1"/>
+  <text x="56" y="386" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="13" font-weight="700" fill="#1A1A1A">C. 注液量窗口 FILL.DOSE (概念)</text>
+  <text x="56" y="408" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">Vmax = V0 - V1(活性) - V2(导电剂) - V3(隔膜固体) - V4(粘结剂) - V5(集流体/极耳等)</text>
+  <text x="56" y="428" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">理论最大注液量 m = Vmax * rho  |  实注窗口需留气胀/化成裕度 (勿将书公式当厂标)</text>
+  <text x="56" y="448" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#8A4B2F">风险: 浸润不足 → 局部化成不均 / 封口后气胀  |  过注 → 胀气、泄漏、外观应力 (横纹挂钩)</text>
+
+  <!-- QA hooks -->
+  <rect x="40" y="480" width="900" height="108" fill="#EEF3F6" stroke="#A8B8C4" stroke-width="1"/>
+  <text x="56" y="504" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="12" font-weight="700" fill="#2F4A5E">QA 控制台挂钩</text>
+  <text x="56" y="524" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">机理问: 电解液为何能快速吸入? → FLOW(压差) + WET(毛细/吸附)</text>
+  <text x="56" y="544" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">验证链: 真空曲线 / 注液称重 SPC / 静置 x 真空 DOE / 化成前后厚度与产气</text>
+  <text x="56" y="564" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="11" fill="#333333">交叉: MT.PROC.PRESS 过压实拖慢浸润; MT.PKG.AL.WRINKLE.POSTFILL 注液后外观</text>
+
+  <text x="40" y="612" font-family="IBM Plex Sans, Noto Sans SC, Source Han Sans SC, sans-serif" font-size="10" fill="#777777">AI-LiBs Diagram Agent · electrolyte-fill-wetting-v1.svg · book Ch10.2.1 · media/li-ion-diagrams/</text>
+</svg>

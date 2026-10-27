@@ -1,0 +1,118 @@
+{
+  "id": "q-seal",
+  "label": "软包铝塑膜热封窗口怎么定？虚封/过熔和拉力有什么关系？",
+  "short": "铝塑热封窗口（书源）",
+  "source": {
+    "round": "book-round1",
+    "refs": [
+      "docs/books/li-ion-mfg-process/cards/KC-BOOK-SEAL-WINDOW-001.md",
+      "docs/verification-methods-from-book-v1.md VM-PEEL-SEAL-01/05",
+      "media/li-ion-diagrams/al-laminate-cross-section-v0.svg"
+    ]
+  },
+  "nodes": ["MT.PKG.AL.SEALIF", "MT.PKG.SEAL", "MT.PKG.AL.STACK"],
+  "panels": {
+    "mechanism": {
+      "title": "热封窗口：熔合 vs 过熔",
+      "summary": "铝塑膜内层 CPP/极耳胶在温度-压力-时间窗口内熔合缠结成封。热量经 ON→Al→CPP 传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）。窗外则虚封（拉力不足）或过熔溢出/微裂纹/烧焦。",
+      "chain": [
+        {
+          "id": "MT.PKG.AL.STACK",
+          "name": "铝塑膜层序",
+          "def": "外→内常见 ON/PA → 胶 → Al → 胶 → CPP。热封发生在内层聚合物界面；截面图提供层序锚点。",
+          "vars": ["膜批次熔限", "层间粘结", "Al 厚度"]
+        },
+        {
+          "id": "MT.PKG.AL.SEALIF",
+          "name": "热封界面",
+          "def": "窗口内大分子扩散缠结成封；低 T/t/P → 虚封；高 T/P 或超时 → PP 挤出、半切断、拉力峰后回落。",
+          "vars": ["封头温度", "压力", "时间", "封边宽度"]
+        },
+        {
+          "id": "MT.PKG.SEAL",
+          "name": "封口工序（含二封）",
+          "def": "侧/底与顶封（极耳胶）窗口不同；凹凸模控封后厚度，防极耳触铝箔短路。注液污染封口会显著拉低密封裕度。",
+          "vars": ["侧底 vs 顶封设定", "凹凸模", "封口清洁度"]
+        }
+      ],
+      "whyFast": [
+        "先按 DSC/TG 定熔限，再 DOE 扫 T×t×P 找拉力峰与外观边界",
+        "书述经验带需按本厂膜材重标定（侧/底与顶封设定常不同）",
+        "拉力只是结果：同时看烧焦、溢料、半切断与漏液模式"
+      ],
+      "hint": "虚封 ≠ 过熔；先分型再调参。电解液湿封与干封要分开证伪。"
+    },
+    "diagram": {
+      "title": "铝塑膜多层截面",
+      "caption": "外→内：ON/PA → adhesive → Al → adhesive → CPP。热封发生在内层；横纹/应力时点图另挂，本图锚定层序。",
+      "src": "assets/diagrams/al-laminate-cross-section-v0.svg",
+      "nodeId": "MT.PKG.AL.STACK",
+      "actions": ["生成示意图", "查看注液示意"]
+    },
+    "card": {
+      "title": "知识卡片 / 失效挂钩",
+      "sample": false,
+      "provenance": "KC-BOOK-SEAL-WINDOW-001 · 教材改写",
+      "card": {
+        "card_id": "KC-BOOK-SEAL-WINDOW-001",
+        "title": "铝塑膜热封窗口失配致虚封/过熔漏液",
+        "phenomenon": "软包热封后拉力不足、漏液、封边变形烧焦或半切断；极耳处更易出问题。",
+        "causes": [
+          "T/P/t 低于窗口：CPP 未充分熔合",
+          "温度近上限或超时：PP 过熔溢出、微裂纹、烧焦变形",
+          "压力过低强度不够；过高挤走热封料形成半切断",
+          "注液残留污染封口；极耳被电解液长期腐蚀（间接）"
+        ],
+        "mechanism": "热量经多层传递至 CPP/极耳胶界面；窗口内扩散缠结成封，窗外虚封或过熔。可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶常需更高设定（须按本厂膜材重标定）。",
+        "risk": "漏液投诉；极耳触 Al 短路；长期腐蚀。",
+        "countermeasures": [
+          "按 DSC/TG 定熔限再 DOE 拉力窗口；宁低时长短热辐射影响",
+          "凹凸模控封后厚度，防极耳触铝箔短路",
+          "清洁封口、控预留位；铁氟龙/硅胶条保护封头"
+        ],
+        "mechanism_node_id": "MT.PKG.AL.SEALIF",
+        "verification_status": "open",
+        "confidence": 0.62,
+        "source": "literature-book-round1"
+      },
+      "failLinks": ["MT.FAIL.LEAK", "MT.FAIL.CORRODE", "MT.FAIL.SC"]
+    },
+    "verify": {
+      "title": "检测验证与管理",
+      "promptHint": "列出检测方法",
+      "sourceNote": "条目改写自 verification-methods-from-book-v1（VM-PEEL-SEAL / LEAK / DOE）。",
+      "methods": [
+        {
+          "id": "VM-PEEL-SEAL-01",
+          "name": "铝塑热封拉力 / 剥离",
+          "use": "拉力随 T/P/t；对照烧焦/溢料/半切断外观"
+        },
+        {
+          "id": "VM-PEEL-SEAL-05",
+          "name": "热封工艺窗口 DOE",
+          "use": "T×t×P 矩阵 → 拉力 + 漏液 + 外观，冻结前定窗口"
+        },
+        {
+          "id": "VM-LEAK-01",
+          "name": "气密 / 漏液筛查",
+          "use": "区分密封漏 vs 正常产气鼓胀；湿封单独跟踪"
+        },
+        {
+          "id": "VM-THK-SEC-02",
+          "name": "封口截面冷镶 / 金相",
+          "use": "虚封、过熔、极耳-Al 间距与半切断"
+        },
+        {
+          "id": "VM-SPC-05",
+          "name": "封口拉力入过程图",
+          "use": "膜批次切换与封头磨损漂移监控"
+        }
+      ],
+      "management": [
+        "膜批次 DSC/熔限变更触发窗口复核",
+        "外观与拉力双门禁；勿只用终端拉力掩盖湿封污染",
+        "顶封（极耳）与侧底封分窗管理"
+      ]
+    }
+  }
+}

@@ -1,0 +1,3110 @@
+{
+  "meta": {
+    "product": "AI-LiBs",
+    "version": "v1-card-search",
+    "count": 21,
+    "note": "Search index over 21 book knowledge cards — paraphrased excerpts for four panels; not verbatim book text.",
+    "generatedBy": "scripts/build-card-index.mjs",
+    "sourceDir": "/cursor/stores/bc-3f217468-becb-43a9-8969-3cd20dcacf05/docs/books/li-ion-mfg-process/cards",
+    "storeRefs": [
+      "docs/books/li-ion-mfg-process/cards/",
+      "docs/verification-methods-from-book-v1.md",
+      "media/li-ion-diagrams/"
+    ]
+  },
+  "cards": [
+    {
+      "id": "KC-BOOK-ASSY-SHORT-001",
+      "card_id": "KC-BOOK-ASSY-SHORT-001",
+      "title": "装配短路隐患：异物/掉粉/隔膜破损与入壳压力",
+      "short": "装配短路隐患",
+      "mechanism_node": "MT.PROC.ASSY",
+      "tags": [
+        "assembly",
+        "short",
+        "foreign-matter",
+        "X-ray"
+      ],
+      "keywords": [
+        "装配",
+        "短路",
+        "异物",
+        "掉粉",
+        "隔膜破损",
+        "入壳",
+        "贴胶",
+        "装配短路隐患",
+        "隔膜破损与入壳压力",
+        "assembly",
+        "short",
+        "foreign-matter",
+        "X-ray",
+        "MT.PROC.ASSY",
+        "KC-BOOK-ASSY-SHORT-001",
+        "ASSY-SHORT"
+      ],
+      "excerpts": {
+        "mechanism": "装配阶段把上游毛刺/粉尘与隔膜完整性耦合；压装减小间距使临界缺陷显形。 可检验预测：加强除尘/贴胶与降低入壳峰值压力后短路率下降；解剖应对上异物或刺穿点。",
+        "diagram": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-ASSY-SHORT-001",
+        "card": "卷绕/叠片后短路测试失败；或入壳后才暴露微短路；X-ray 见错位或异物。",
+        "verify": "卷绕后短路/绝缘 / 微焦 X 射线覆盖/对齐 / 安全抽检入口"
+      },
+      "nodes": [
+        "MT.PROC.ASSY",
+        "MT.FAIL.SC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 装配短路隐患",
+          "summary": "装配阶段把上游毛刺/粉尘与隔膜完整性耦合；压装减小间距使临界缺陷显形。 可检验预测：加强除尘/贴胶与降低入壳峰值压力后短路率下降；解剖应对上异物或刺穿点。",
+          "chain": [
+            {
+              "id": "MT.PROC.ASSY",
+              "name": "装配短路隐患",
+              "def": "装配阶段把上游毛刺/粉尘与隔膜完整性耦合；压装减小间距使临界缺陷显形。 可检验预测：加强除尘/贴胶与降低入壳峰值压力后短路率下降；解剖应对上异物或刺穿点。",
+              "vars": [
+                "装配",
+                "短路",
+                "异物",
+                "掉粉",
+                "隔膜破损"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "分切毛刺粉尘 → 短路源",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "卷绕张力/纠偏 → 隔膜完整性",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "装配阶段把上游毛刺/粉尘与隔膜完整性耦合；压装减小间距使临界缺陷显形。 可检验预测：加强除尘/贴胶与降低入壳峰值压力后短路率下降；解剖应对上异物或刺穿点。",
+            "短路测试仪+真空负压等组合；X-ray 结构检",
+            "除粉除静电；极耳/危险部位贴胶"
+          ],
+          "hint": "推理先落点 MT.PROC.ASSY，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-ASSY-SHORT-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.ASSY",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-ASSY-SHORT-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-ASSY-SHORT-001",
+            "title": "装配短路隐患：异物/掉粉/隔膜破损与入壳压力",
+            "phenomenon": "卷绕/叠片后短路测试失败；或入壳后才暴露微短路；X-ray 见错位或异物。",
+            "causes": [
+              "金属异物、箔屑、涂层脱落、隔膜破损",
+              "入壳压力过大：毛刺刺伤隔膜",
+              "叠片负极包覆不足；贴胶缺失/错位"
+            ],
+            "mechanism": "装配阶段把上游毛刺/粉尘与隔膜完整性耦合；压装减小间距使临界缺陷显形。 可检验预测：加强除尘/贴胶与降低入壳峰值压力后短路率下降；解剖应对上异物或刺穿点。",
+            "risk": "内短路、漏检流入化成/出货。",
+            "countermeasures": [
+              "短路测试仪+真空负压等组合；X-ray 结构检",
+              "除粉除静电；极耳/危险部位贴胶",
+              "控制入壳压力与对齐；负极包覆正极尺寸窗"
+            ],
+            "mechanism_node_id": "MT.PROC.ASSY",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SHORT-01",
+              "name": "卷绕后短路/绝缘",
+              "use": "装配短路抽检"
+            },
+            {
+              "id": "VM-ASSY-01",
+              "name": "微焦 X 射线覆盖/对齐",
+              "use": "异物/错位/破膜"
+            },
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "漏检短路升安全项"
+            }
+          ],
+          "management": [
+            "短路测试仪+真空负压等组合；X-ray 结构检",
+            "除粉除静电；极耳/危险部位贴胶",
+            "证据锚点：书卷3 §8.3 装配质量检验与入壳压力叙述（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-COAT-RIBBON-001",
+      "card_id": "KC-BOOK-COAT-RIBBON-001",
+      "title": "涂布纵/横条道：毛细窗口与机械振动耦合",
+      "short": "涂布纵/横条道",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "coating",
+        "ribbing",
+        "vibration",
+        "capillary"
+      ],
+      "keywords": [
+        "涂布",
+        "纵条道",
+        "横条道",
+        "条道",
+        "振动",
+        "毛细",
+        "面密度",
+        "涂布纵",
+        "毛细窗口与机械振动耦合",
+        "coating",
+        "ribbing",
+        "vibration",
+        "capillary",
+        "MT.PROC.COAT",
+        "KC-BOOK-COAT-RIBBON-001",
+        "COAT-RIBBON"
+      ],
+      "excerpts": {
+        "mechanism": "纵条道属涂布稳定性边界问题；横条道多为系统动力学扰动在弯液面上的调制。 可检验预测：降速、增厚、增间隙、提高表面张力应抑纵条；减振/提负压/降速应抑横条。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-COAT-RIBBON-001",
+        "card": "纵向周期性竖条道，或沿宽度方向周期性横条道（遮盖率波动）。",
+        "verify": "涂布弊病分型点检 / 润湿与流平窗口 / 缩孔/蜂窝/画框筛查 / 面密度点检"
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.PROC.PRESS",
+        "MT.FAIL.CAP",
+        "MT.FAIL.APPEAR"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 涂布纵/横条道",
+          "summary": "纵条道属涂布稳定性边界问题；横条道多为系统动力学扰动在弯液面上的调制。 可检验预测：降速、增厚、增间隙、提高表面张力应抑纵条；减振/提负压/降速应抑横条。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "涂布纵/横条道",
+              "def": "纵条道属涂布稳定性边界问题；横条道多为系统动力学扰动在弯液面上的调制。 可检验预测：降速、增厚、增间隙、提高表面张力应抑纵条；减振/提负压/降速应抑横条。",
+              "vars": [
+                "涂布",
+                "纵条道",
+                "横条道",
+                "条道",
+                "振动"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "浆料粘弹性/表面张力 → 涂布窗口",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "设备振动与张力控制 → 弯液面调制",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "纵条道属涂布稳定性边界问题；横条道多为系统动力学扰动在弯液面上的调制。 可检验预测：降速、增厚、增间隙、提高表面张力应抑纵条；减振/提负压/降速应抑横条。",
+            "纵：低粘低速、高表面张力、厚涂层、大间隙；平衡供浆与涂布量",
+            "横：减振防共振、稳张力/车速、提负压、减间隙、护弯液面"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-COAT-RIBBON-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-COAT-RIBBON-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-COAT-RIBBON-001",
+            "title": "涂布纵/横条道：毛细窗口与机械振动耦合",
+            "phenomenon": "纵向周期性竖条道，或沿宽度方向周期性横条道（遮盖率波动）。",
+            "causes": [
+              "纵条道：高毛细管数、涂层厚度/间隙比 h/G 过小、过高粘弹性",
+              "横条道：片速/张力/弯液面波动、机械振动、气扰",
+              "片幅自身纵/横条缺陷遗传"
+            ],
+            "mechanism": "纵条道属涂布稳定性边界问题；横条道多为系统动力学扰动在弯液面上的调制。 可检验预测：降速、增厚、增间隙、提高表面张力应抑纵条；减振/提负压/降速应抑横条。",
+            "risk": "面密度周期波动 → 压实与容量一致性；外观不可接受。",
+            "countermeasures": [
+              "纵：低粘低速、高表面张力、厚涂层、大间隙；平衡供浆与涂布量",
+              "横：减振防共振、稳张力/车速、提负压、减间隙、护弯液面"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.PRESS",
+            "MT.FAIL.CAP",
+            "MT.FAIL.APPEAR"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/纵横条道/气泡分型与机向判定"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "接触角与流平；缩孔前兆"
+            },
+            {
+              "id": "VM-COAT-03",
+              "name": "缩孔/蜂窝/画框筛查",
+              "use": "干燥张力梯度类缺陷"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度点检",
+              "use": "条道/厚边导致的面密度波动"
+            }
+          ],
+          "management": [
+            "纵：低粘低速、高表面张力、厚涂层、大间隙；平衡供浆与涂布量",
+            "横：减振防共振、稳张力/车速、提负压、减间隙、护弯液面",
+            "证据锚点：书卷2 §5.4.3(2)(3) 纵条道/横条道（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-COAT-STREAK-001",
+      "card_id": "KC-BOOK-COAT-STREAK-001",
+      "title": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+      "short": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "coating",
+        "streak",
+        "pencil-line",
+        "filter"
+      ],
+      "keywords": [
+        "涂布",
+        "拉丝",
+        "铅笔道",
+        "细条道",
+        "弯液面",
+        "过滤",
+        "气泡",
+        "涂布拉丝",
+        "由颗粒或气泡污染弯液面",
+        "coating",
+        "streak",
+        "pencil-line",
+        "filter",
+        "MT.PROC.COAT",
+        "KC-BOOK-COAT-STREAK-001",
+        "COAT-STREAK"
+      ],
+      "excerpts": {
+        "mechanism": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。 可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-COAT-STREAK-001",
+        "card": "沿涂布方向出现细条纹（拉丝/铅笔道）；与整体毛细稳定性无关的局部缺陷。",
+        "verify": "涂布弊病分型点检 / 润湿与流平窗口 / 缩孔/蜂窝/画框筛查 / 面密度点检"
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.FAIL.APPEAR",
+        "MT.FAIL.CAP"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+          "summary": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。 可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+              "def": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。 可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+              "vars": [
+                "涂布",
+                "拉丝",
+                "铅笔道",
+                "细条道",
+                "弯液面"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PROC.COAT 头几何/清洁度 → 弯液面完整性",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "浆料过滤/消泡 → 颗粒负荷",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。 可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+            "浆料过滤 + 涂布头处二次过滤；消泡；机头卫生防锈",
+            "片幅清洁器；适当加宽条缝/间隙；减小层间流速差"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-COAT-STREAK-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-COAT-STREAK-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-COAT-STREAK-001",
+            "title": "涂布拉丝/细条道（铅笔道）由颗粒或气泡污染弯液面",
+            "phenomenon": "沿涂布方向出现细条纹（拉丝/铅笔道）；与整体毛细稳定性无关的局部缺陷。",
+            "causes": [
+              "片幅/浆料/空气夹带颗粒或气泡污染涂布头表面或下游弯液面",
+              "干粘结剂在条缝出口/间隙残留；涂布头缺口等效颗粒",
+              "多层涂布相邻层流速差过大放大冲击"
+            ],
+            "mechanism": "大颗粒/团聚体撞击下游弯液面，局部破坏膜厚连续性，沿机向拖出细条道。 可检验预测：加强头前过滤与头清洁后条道密度应下降；故意引入标定颗粒应复现条道。",
+            "risk": "局部缺料/露箔 → 容量/安全；外观报废。",
+            "countermeasures": [
+              "浆料过滤 + 涂布头处二次过滤；消泡；机头卫生防锈",
+              "片幅清洁器；适当加宽条缝/间隙；减小层间流速差",
+              "在线清除污染"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.APPEAR",
+            "MT.FAIL.CAP",
+            "MT.PROC.COAT"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/纵横条道/气泡分型与机向判定"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "接触角与流平；缩孔前兆"
+            },
+            {
+              "id": "VM-COAT-03",
+              "name": "缩孔/蜂窝/画框筛查",
+              "use": "干燥张力梯度类缺陷"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度点检",
+              "use": "条道/厚边导致的面密度波动"
+            }
+          ],
+          "management": [
+            "浆料过滤 + 涂布头处二次过滤；消泡；机头卫生防锈",
+            "片幅清洁器；适当加宽条缝/间隙；减小层间流速差",
+            "证据锚点：书卷2 §5.4.3(1) 拉丝和细条道（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-DRY-CRATER-001",
+      "card_id": "KC-BOOK-DRY-CRATER-001",
+      "title": "干燥缩孔/火山口与对流蜂窝由表面张力梯度驱动",
+      "short": "干燥缩孔/火山口与对流蜂窝由表面张力梯度驱动",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "drying",
+        "crater",
+        "Benard",
+        "surface-tension"
+      ],
+      "keywords": [
+        "干燥",
+        "缩孔",
+        "火山口",
+        "蜂窝",
+        "表面张力",
+        "针孔",
+        "干燥缩孔",
+        "火山口与对流蜂窝由表面张力梯度驱动",
+        "drying",
+        "crater",
+        "Benard",
+        "surface-tension",
+        "MT.PROC.COAT",
+        "KC-BOOK-DRY-CRATER-001",
+        "DRY-CRATER"
+      ],
+      "excerpts": {
+        "mechanism": "流体自发从低表面张力区流向高张力区；薄涂层以张力梯度为主，厚涂层以密度梯度为主。 可检验预测：清洁空气与抑尘降低孔洞；减薄/提粘/合适用表面活性剂降低缩孔；降干燥速率或改溶剂挥发序列抑蜂窝。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-CRATER-001",
+        "card": "湿膜干燥初期出现中心斑点、周围膜薄的火山口缩孔；或六角对流蜂窝纹理。",
+        "verify": "涂布弊病分型点检 / 润湿与流平窗口 / 缩孔/蜂窝/画框筛查 / 面密度点检"
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.FAIL.APPEAR",
+        "MT.FAIL.SC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 干燥缩孔/火山口与对流蜂窝由表面张力梯度驱动",
+          "summary": "流体自发从低表面张力区流向高张力区；薄涂层以张力梯度为主，厚涂层以密度梯度为主。 可检验预测：清洁空气与抑尘降低孔洞；减薄/提粘/合适用表面活性剂降低缩孔；降干燥速率或改溶剂挥发序列抑蜂窝。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "干燥缩孔/火山口与对流蜂窝由表面张力梯度驱动",
+              "def": "流体自发从低表面张力区流向高张力区；薄涂层以张力梯度为主，厚涂层以密度梯度为主。 可检验预测：清洁空气与抑尘降低孔洞；减薄/提粘/合适用表面活性剂降低缩孔；降干燥速率或改溶剂挥发序列抑蜂窝。",
+              "vars": [
+                "干燥",
+                "缩孔",
+                "火山口",
+                "蜂窝",
+                "表面张力"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "涂布后湿膜流平窗口 → 干燥前缺陷愈合",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "环境尘/油 → 成核点",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "流体自发从低表面张力区流向高张力区；薄涂层以张力梯度为主，厚涂层以密度梯度为主。 可检验预测：清洁空气与抑尘降低孔洞；减薄/提粘/合适用表面活性剂降低缩孔；降干燥速率或改溶剂挥发序列抑蜂窝。",
+            "清洁空气；浆料消泡过滤；控制油污源",
+            "合理表面活性剂用量（避免过量）；匹配层间张力"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-CRATER-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-DRY-CRATER-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-DRY-CRATER-001",
+            "title": "干燥缩孔/火山口与对流蜂窝由表面张力梯度驱动",
+            "phenomenon": "湿膜干燥初期出现中心斑点、周围膜薄的火山口缩孔；或六角对流蜂窝纹理。",
+            "causes": [
+              "低表面张力污染点（油、脂、不溶硅、尘粒）引发径向铺展流",
+              "蒸发致表面降温 → 密度/表面张力梯度 → 对流蜂窝",
+              "表面活性剂过量超过溶解极限亦可致缩孔；层间表面张力差过大"
+            ],
+            "mechanism": "流体自发从低表面张力区流向高张力区；薄涂层以张力梯度为主，厚涂层以密度梯度为主。 可检验预测：清洁空气与抑尘降低孔洞；减薄/提粘/合适用表面活性剂降低缩孔；降干燥速率或改溶剂挥发序列抑蜂窝。",
+            "risk": "针孔/露底 → 腐蚀、短路、外观报废。",
+            "countermeasures": [
+              "清洁空气；浆料消泡过滤；控制油污源",
+              "合理表面活性剂用量（避免过量）；匹配层间张力",
+              "调干燥速率与溶剂体系；提高表面/整体粘度"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.APPEAR",
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/纵横条道/气泡分型与机向判定"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "接触角与流平；缩孔前兆"
+            },
+            {
+              "id": "VM-COAT-03",
+              "name": "缩孔/蜂窝/画框筛查",
+              "use": "干燥张力梯度类缺陷"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度点检",
+              "use": "条道/厚边导致的面密度波动"
+            }
+          ],
+          "management": [
+            "清洁空气；浆料消泡过滤；控制油污源",
+            "合理表面活性剂用量（避免过量）；匹配层间张力",
+            "证据锚点：书卷2 §5.6.3.2 表面张力弊病与对流蜂窝（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-DRY-EDGE-001",
+      "card_id": "KC-BOOK-DRY-EDGE-001",
+      "title": "涂布干燥厚边/画框：边缘浓缩驱动物料外流",
+      "short": "涂布干燥厚边/画框",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "drying",
+        "thick-edge",
+        "picture-frame",
+        "slot-die"
+      ],
+      "keywords": [
+        "干燥",
+        "厚边",
+        "画框",
+        "边缘",
+        "条缝",
+        "辊压裂边",
+        "涂布干燥厚边",
+        "边缘浓缩驱动物料外流",
+        "drying",
+        "thick-edge",
+        "picture-frame",
+        "slot-die",
+        "MT.PROC.COAT",
+        "KC-BOOK-DRY-EDGE-001",
+        "DRY-EDGE"
+      ],
+      "excerpts": {
+        "mechanism": "边缘先变薄→浓缩快→边缘表面张力升高→物料由低张力区流向边缘，正反馈形成厚边。 可检验预测：提高粘度、减薄湿膜、表面活性剂抹平张力差应减弱厚边；减小无量纲间隙缩小影响宽度。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-EDGE-001",
+        "card": "间歇或条带涂布边缘超高（厚边/画框），中心相对变薄。",
+        "verify": "涂布弊病分型点检 / 润湿与流平窗口 / 缩孔/蜂窝/画框筛查 / 面密度点检"
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.PROC.PRESS",
+        "MT.PROC.ASSY",
+        "MT.FAIL.APPEAR"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 涂布干燥厚边/画框",
+          "summary": "边缘先变薄→浓缩快→边缘表面张力升高→物料由低张力区流向边缘，正反馈形成厚边。 可检验预测：提高粘度、减薄湿膜、表面活性剂抹平张力差应减弱厚边；减小无量纲间隙缩小影响宽度。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "涂布干燥厚边/画框",
+              "def": "边缘先变薄→浓缩快→边缘表面张力升高→物料由低张力区流向边缘，正反馈形成厚边。 可检验预测：提高粘度、减薄湿膜、表面活性剂抹平张力差应减弱厚边；减小无量纲间隙缩小影响宽度。",
+              "vars": [
+                "干燥",
+                "厚边",
+                "画框",
+                "边缘",
+                "条缝"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "条缝模头间隙/拉伸比 → 边缘初形",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "浆料粘度与表面活性剂 → 流动阻力",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "边缘先变薄→浓缩快→边缘表面张力升高→物料由低张力区流向边缘，正反馈形成厚边。 可检验预测：提高粘度、减薄湿膜、表面活性剂抹平张力差应减弱厚边；减小无量纲间隙缩小影响宽度。",
+            "提粘、减湿厚、用表面活性剂",
+            "优化模头间隙与边缘几何；匹配干燥速率"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-EDGE-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-DRY-EDGE-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-DRY-EDGE-001",
+            "title": "涂布干燥厚边/画框：边缘浓缩驱动物料外流",
+            "phenomenon": "间歇或条带涂布边缘超高（厚边/画框），中心相对变薄。",
+            "causes": [
+              "边缘弧形薄膜先浓缩，固体表面张力高于溶剂，物料向边缘迁移",
+              "无量纲间隙过大扩大边缘影响区；干燥过快放大梯度"
+            ],
+            "mechanism": "边缘先变薄→浓缩快→边缘表面张力升高→物料由低张力区流向边缘，正反馈形成厚边。 可检验预测：提高粘度、减薄湿膜、表面活性剂抹平张力差应减弱厚边；减小无量纲间隙缩小影响宽度。",
+            "risk": "边缘超厚 → 辊压裂边/翻边；装配对齐与短路裕度恶化。",
+            "countermeasures": [
+              "提粘、减湿厚、用表面活性剂",
+              "优化模头间隙与边缘几何；匹配干燥速率"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.PRESS",
+            "MT.PROC.ASSY",
+            "MT.FAIL.APPEAR"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/纵横条道/气泡分型与机向判定"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "接触角与流平；缩孔前兆"
+            },
+            {
+              "id": "VM-COAT-03",
+              "name": "缩孔/蜂窝/画框筛查",
+              "use": "干燥张力梯度类缺陷"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度点检",
+              "use": "条道/厚边导致的面密度波动"
+            }
+          ],
+          "management": [
+            "提粘、减湿厚、用表面活性剂",
+            "优化模头间隙与边缘几何；匹配干燥速率",
+            "证据锚点：书卷2 §5.6.3 厚边与画框及条缝边缘实验叙述（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-DRY-POINT-001",
+      "card_id": "KC-BOOK-DRY-POINT-001",
+      "title": "干燥点过早/过晚破坏流平与粘结剂分布",
+      "short": "干燥点过早/过晚破坏流平与粘结剂分布",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "drying",
+        "drying-point",
+        "binder-migration"
+      ],
+      "keywords": [
+        "干燥点",
+        "流平",
+        "粘结剂迁移",
+        "烘道",
+        "车速",
+        "干燥点过早",
+        "过晚破坏流平与粘结剂分布",
+        "drying",
+        "drying-point",
+        "binder-migration",
+        "MT.PROC.COAT",
+        "KC-BOOK-DRY-POINT-001",
+        "DRY-POINT"
+      ],
+      "excerpts": {
+        "mechanism": "恒速段由外扩散控制，降速段由内扩散控制；干燥点位置决定流平时间与粘结剂随液迁移风险。 可检验预测：提干球温度/风量或降车速应使干燥点前移；降速段宜低风速。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-POINT-001",
+        "card": "烘道温度曲线显示干燥点相对预定位置前移或后移；伴随皱皮龟裂或流挂、粘结剂上下不均。",
+        "verify": "涂布弊病分型点检 / 润湿与流平窗口 / 缩孔/蜂窝/画框筛查 / 面密度点检"
+      },
+      "nodes": [
+        "MT.PROC.COAT"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 干燥点过早/过晚破坏流平与粘结剂分布",
+          "summary": "恒速段由外扩散控制，降速段由内扩散控制；干燥点位置决定流平时间与粘结剂随液迁移风险。 可检验预测：提干球温度/风量或降车速应使干燥点前移；降速段宜低风速。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "干燥点过早/过晚破坏流平与粘结剂分布",
+              "def": "恒速段由外扩散控制，降速段由内扩散控制；干燥点位置决定流平时间与粘结剂随液迁移风险。 可检验预测：提干球温度/风量或降车速应使干燥点前移；降速段宜低风速。",
+              "vars": [
+                "干燥点",
+                "流平",
+                "粘结剂迁移",
+                "烘道",
+                "车速"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "涂布车速/湿厚 → 干燥负荷",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "送风干湿球与喷嘴布置 → 干燥场",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "恒速段由外扩散控制，降速段由内扩散控制；干燥点位置决定流平时间与粘结剂随液迁移风险。 可检验预测：提干球温度/风量或降车速应使干燥点前移；降速段宜低风速。",
+            "用红外温度曲线标定干燥点；闭环调风与车速",
+            "恒速段高风速、降速段低风速分段策略"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-DRY-POINT-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-DRY-POINT-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-DRY-POINT-001",
+            "title": "干燥点过早/过晚破坏流平与粘结剂分布",
+            "phenomenon": "烘道温度曲线显示干燥点相对预定位置前移或后移；伴随皱皮龟裂或流挂、粘结剂上下不均。",
+            "causes": [
+              "风温/风量/循环比与车速不匹配，恒速段终点偏离",
+              "干燥过快：粘度飙升流平不足；过慢：流挂与效率下降"
+            ],
+            "mechanism": "恒速段由外扩散控制，降速段由内扩散控制；干燥点位置决定流平时间与粘结剂随液迁移风险。 可检验预测：提干球温度/风量或降车速应使干燥点前移；降速段宜低风速。",
+            "risk": "皱皮龟裂、粘结剂富集表面、涂层不均 → 掉粉与电性能波动。",
+            "countermeasures": [
+              "用红外温度曲线标定干燥点；闭环调风与车速",
+              "恒速段高风速、降速段低风速分段策略",
+              "干燥能力与涂布产能匹配"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.COAT"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-COAT-01",
+              "name": "涂布弊病分型点检",
+              "use": "拉丝/纵横条道/气泡分型与机向判定"
+            },
+            {
+              "id": "VM-COAT-02",
+              "name": "润湿与流平窗口",
+              "use": "接触角与流平；缩孔前兆"
+            },
+            {
+              "id": "VM-COAT-03",
+              "name": "缩孔/蜂窝/画框筛查",
+              "use": "干燥张力梯度类缺陷"
+            },
+            {
+              "id": "VM-COAT-04",
+              "name": "面密度点检",
+              "use": "条道/厚边导致的面密度波动"
+            }
+          ],
+          "management": [
+            "用红外温度曲线标定干燥点；闭环调风与车速",
+            "恒速段高风速、降速段低风速分段策略",
+            "证据锚点：书卷2 §5.6.2–5.6.3 干燥点控制与流变缺陷预防（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-FILL-WET-001",
+      "card_id": "KC-BOOK-FILL-WET-001",
+      "title": "注液浸润不足：局部化成不均与气胀",
+      "short": "注液浸润不足",
+      "mechanism_node": "MT.PROC.FILL",
+      "tags": [
+        "electrolyte-fill",
+        "wetting",
+        "gas",
+        "formation"
+      ],
+      "keywords": [
+        "注液",
+        "浸润",
+        "电解液",
+        "真空",
+        "静置",
+        "气胀",
+        "化成",
+        "注液浸润不足",
+        "局部化成不均与气胀",
+        "electrolyte-fill",
+        "wetting",
+        "gas",
+        "formation",
+        "MT.PROC.FILL",
+        "KC-BOOK-FILL-WET-001",
+        "FILL-WET"
+      ],
+      "excerpts": {
+        "mechanism": "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。 可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+        "diagram": "流体输送 → 毛细/吸附浸润 → 注液量窗口。挂载 FILL 系节点。 · 对应卡 KC-BOOK-FILL-WET-001",
+        "card": "注液后静置不足即化成；局部化成不足、封口后气胀、性能离散。",
+        "verify": "注液称重 SPC / 真空曲线 / 壳体变形点检 / 静置×真空 DOE + 剖检 / 水分与露点"
+      },
+      "nodes": [
+        "MT.PROC.FILL",
+        "MT.PROC.FORM",
+        "MT.FAIL.SWELL",
+        "MT.PROC.PRESS"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 注液浸润不足",
+          "summary": "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。 可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+          "chain": [
+            {
+              "id": "MT.PROC.FILL",
+              "name": "注液浸润不足",
+              "def": "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。 可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+              "vars": [
+                "注液",
+                "浸润",
+                "电解液",
+                "真空",
+                "静置"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PROC.PRESS 压实/孔隙 → 浸润阻力",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "真空系统能力 → 压差动力",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。 可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+            "足够真空与静置；必要时分步注液",
+            "设计端减宽/减厚/降压实/降曲折度促浸润"
+          ],
+          "hint": "推理先落点 MT.PROC.FILL，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "注液与浸润示意（书对齐 v1）",
+          "caption": "流体输送 → 毛细/吸附浸润 → 注液量窗口。挂载 FILL 系节点。 · 对应卡 KC-BOOK-FILL-WET-001",
+          "src": "assets/diagrams/electrolyte-fill-wetting-v1.svg",
+          "nodeId": "MT.PROC.FILL",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-FILL-WET-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-FILL-WET-001",
+            "title": "注液浸润不足：局部化成不均与气胀",
+            "phenomenon": "注液后静置不足即化成；局部化成不足、封口后气胀、性能离散。",
+            "causes": [
+              "真空压差/保压时间不足；孔隙过小曲折度高使流量骤降",
+              "毛细在变径/墨水瓶孔中阻滞",
+              "过高压注导致壳体变形；极片过宽过厚高压实"
+            ],
+            "mechanism": "注液=宏观充液+微观浸润；毛细与吸附可助可阻，微孔浸润极慢，必须静置。 可检验预测：提高真空度/保压或降低压实/厚度应缩短充分浸润时间；浸润不足批次气胀与化成不均上升。",
+            "risk": "化成不均、气胀、界面阻抗高。",
+            "countermeasures": [
+              "足够真空与静置；必要时分步注液",
+              "设计端减宽/减厚/降压实/降曲折度促浸润",
+              "避免注液管过压变形"
+            ],
+            "mechanism_node_id": "MT.PROC.FILL",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.FORM",
+            "MT.FAIL.SWELL",
+            "MT.PROC.PRESS"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-FILL-MASS-01",
+              "name": "注液称重 SPC",
+              "use": "注液量窗口"
+            },
+            {
+              "id": "VM-FILL-VAC-01",
+              "name": "真空曲线 / 壳体变形点检",
+              "use": "Δp 与过压变形"
+            },
+            {
+              "id": "VM-FILL-WET-01",
+              "name": "静置×真空 DOE + 剖检",
+              "use": "浸润不足证伪"
+            },
+            {
+              "id": "VM-H2O-01",
+              "name": "水分与露点",
+              "use": "气胀根因分流"
+            }
+          ],
+          "management": [
+            "足够真空与静置；必要时分步注液",
+            "设计端减宽/减厚/降压实/降曲折度促浸润",
+            "证据锚点：书卷4 §10.2.1 注液与浸润（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-FORM-GASPATH-001",
+      "card_id": "KC-BOOK-FORM-GASPATH-001",
+      "title": "预化成气路过大致化成不均与电解液损失",
+      "short": "预化成气路过大致化成不均与电解液损失",
+      "mechanism_node": "MT.PROC.FORM",
+      "tags": [
+        "formation",
+        "gas-path",
+        "SEI",
+        "pouch-clamp"
+      ],
+      "keywords": [
+        "化成",
+        "预化成",
+        "气路",
+        "SEI",
+        "夹紧",
+        "软包",
+        "产气",
+        "预化成气路过大致化成不均与电解液损失",
+        "formation",
+        "gas-path",
+        "pouch-clamp",
+        "MT.PROC.FORM",
+        "KC-BOOK-FORM-GASPATH-001",
+        "FORM-GASPATH"
+      ],
+      "excerpts": {
+        "mechanism": "气泡扩展连通形成稳定气路后气体逸出，但气路处反应暂停→化成不均；气泡占位导致电解液溢出。 可检验预测：小电流+夹紧应减小气路面积并改善均匀性；软包夹具化成+抽气囊再二封。",
+        "diagram": "化成/水分与注液浸润强耦合；暂复用注液示意作上下文。 · 对应卡 KC-BOOK-FORM-GASPATH-001",
+        "card": "预化成后极片见河流状气路；化成不均、气胀倾向、电解液溢出损失；软包更明显。",
+        "verify": "水分与露点 / 老化电压降甄别 / 分容全检 / 安全抽检入口"
+      },
+      "nodes": [
+        "MT.PROC.FORM",
+        "MT.FAIL.SWELL",
+        "MT.PKG.AL.WRINKLE.POSTFILL"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 预化成气路过大致化成不均与电解液损失",
+          "summary": "气泡扩展连通形成稳定气路后气体逸出，但气路处反应暂停→化成不均；气泡占位导致电解液溢出。 可检验预测：小电流+夹紧应减小气路面积并改善均匀性；软包夹具化成+抽气囊再二封。",
+          "chain": [
+            {
+              "id": "MT.PROC.FORM",
+              "name": "预化成气路过大致化成不均与电解液损失",
+              "def": "气泡扩展连通形成稳定气路后气体逸出，但气路处反应暂停→化成不均；气泡占位导致电解液溢出。 可检验预测：小电流+夹紧应减小气路面积并改善均匀性；软包夹具化成+抽气囊再二封。",
+              "vars": [
+                "化成",
+                "预化成",
+                "气路",
+                "SEI",
+                "夹紧"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "注液浸润状态 → 初始气核",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "壳体刚度/夹具 → 气路面积",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "气泡扩展连通形成稳定气路后气体逸出，但气路处反应暂停→化成不均；气泡占位导致电解液溢出。 可检验预测：小电流+夹紧应减小气路面积并改善均匀性；软包夹具化成+抽气囊再二封。",
+            "小电流预化成；合适截止电压；软包夹紧",
+            "二次补液或分步注液策略（按成本/工艺）"
+          ],
+          "hint": "推理先落点 MT.PROC.FORM，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "注液与浸润示意（书对齐 v1）",
+          "caption": "化成/水分与注液浸润强耦合；暂复用注液示意作上下文。 · 对应卡 KC-BOOK-FORM-GASPATH-001",
+          "src": "assets/diagrams/electrolyte-fill-wetting-v1.svg",
+          "nodeId": "MT.PROC.FORM",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-FORM-GASPATH-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-FORM-GASPATH-001",
+            "title": "预化成气路过大致化成不均与电解液损失",
+            "phenomenon": "预化成后极片见河流状气路；化成不均、气胀倾向、电解液溢出损失；软包更明显。",
+            "causes": [
+              "预化成电流过大，产气过快，气路面积大",
+              "壳体夹紧力不足（软包>铝壳>钢壳气路面积递减）",
+              "截止电压过低气体未充分逸出，封口后气胀；过高则时间长吸潮吸氧"
+            ],
+            "mechanism": "气泡扩展连通形成稳定气路后气体逸出，但气路处反应暂停→化成不均；气泡占位导致电解液溢出。 可检验预测：小电流+夹紧应减小气路面积并改善均匀性；软包夹具化成+抽气囊再二封。",
+            "risk": "SEI 疏松（大电流形核快）、气胀、电解液亏液、厚度超差。",
+            "countermeasures": [
+              "小电流预化成；合适截止电压；软包夹紧",
+              "二次补液或分步注液策略（按成本/工艺）",
+              "化成温度约 20–35℃ 窗口，避免过热溶膜或过冷析锂（书述）"
+            ],
+            "mechanism_node_id": "MT.PROC.FORM",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SWELL",
+            "MT.PKG.AL.WRINKLE.POSTFILL"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-H2O-01",
+              "name": "水分与露点",
+              "use": "产气/HF 路径"
+            },
+            {
+              "id": "VM-FORM-01",
+              "name": "老化电压降甄别",
+              "use": "化成后自放电"
+            },
+            {
+              "id": "VM-GRADE-01",
+              "name": "分容全检",
+              "use": "容量/IR/厚度/外观"
+            },
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "水分/枝晶安全项"
+            }
+          ],
+          "management": [
+            "小电流预化成；合适截止电压；软包夹紧",
+            "二次补液或分步注液策略（按成本/工艺）",
+            "证据锚点：书卷4 §10.2.2 预化成气路、电解液损失与制度原则（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-LASER-WELD-001",
+      "card_id": "KC-BOOK-LASER-WELD-001",
+      "title": "激光焊气孔/裂纹/未焊透/咬边（壳盖封口）",
+      "short": "激光焊气孔/裂纹/未焊透/咬边（壳盖封口）",
+      "mechanism_node": "MT.FAIL.LEAK",
+      "tags": [
+        "laser-weld",
+        "porosity",
+        "crack",
+        "can-seal"
+      ],
+      "keywords": [
+        "激光焊",
+        "气孔",
+        "裂纹",
+        "未焊透",
+        "咬边",
+        "壳盖",
+        "气密",
+        "激光焊气孔",
+        "壳盖封口",
+        "laser-weld",
+        "porosity",
+        "crack",
+        "can-seal",
+        "MT.FAIL.LEAK",
+        "KC-BOOK-LASER-WELD-001",
+        "LASER-WELD"
+      ],
+      "excerpts": {
+        "mechanism": "高反射/高导热铝需足够起始功率，熔化后吸收骤增；冶金气体与应力在快速凝固中被冻结为缺陷。 可检验预测：烘干清洁+惰保+优化脉冲波形应降气孔塌陷；降速增功率清表面应消未焊透。",
+        "diagram": "激光焊/漏液：复用铝塑截面示意作封装气密上下文。 · 对应卡 KC-BOOK-LASER-WELD-001",
+        "card": "壳盖激光焊缝出现气孔、热裂纹、未焊透/未熔合、咬边；气密失败。",
+        "verify": "盖板/极耳焊接剥离 / 气密性筛查 / 短路/绝缘"
+      },
+      "nodes": [
+        "MT.FAIL.LEAK"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 激光焊气孔/裂纹/未焊透/咬边（壳盖封口）",
+          "summary": "高反射/高导热铝需足够起始功率，熔化后吸收骤增；冶金气体与应力在快速凝固中被冻结为缺陷。 可检验预测：烘干清洁+惰保+优化脉冲波形应降气孔塌陷；降速增功率清表面应消未焊透。",
+          "chain": [
+            {
+              "id": "MT.FAIL.LEAK",
+              "name": "激光焊气孔/裂纹/未焊透/咬边（壳盖封口）",
+              "def": "高反射/高导热铝需足够起始功率，熔化后吸收骤增；冶金气体与应力在快速凝固中被冻结为缺陷。 可检验预测：烘干清洁+惰保+优化脉冲波形应降气孔塌陷；降速增功率清表面应消未焊透。",
+              "vars": [
+                "激光焊",
+                "气孔",
+                "裂纹",
+                "未焊透",
+                "咬边"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "材料焊接性（Al/不锈钢）→ 缺陷倾向",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "装配间隙/夹具 → 热传导路径",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "高反射/高导热铝需足够起始功率，熔化后吸收骤增；冶金气体与应力在快速凝固中被冻结为缺陷。 可检验预测：烘干清洁+惰保+优化脉冲波形应降气孔塌陷；降速增功率清表面应消未焊透。",
+            "焊前烘干清洁；惰性保护；控间隙用工装点固",
+            "规范功率/速度/离焦；防咬边在焊透前提下采用较小功率较高焊速"
+          ],
+          "hint": "推理先落点 MT.FAIL.LEAK，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "铝塑膜截面与热封界面示意",
+          "caption": "激光焊/漏液：复用铝塑截面示意作封装气密上下文。 · 对应卡 KC-BOOK-LASER-WELD-001",
+          "src": "assets/diagrams/al-laminate-cross-section-v0.svg",
+          "nodeId": "MT.FAIL.LEAK",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-LASER-WELD-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-LASER-WELD-001",
+            "title": "激光焊气孔/裂纹/未焊透/咬边（壳盖封口）",
+            "phenomenon": "壳盖激光焊缝出现气孔、热裂纹、未焊透/未熔合、咬边；气密失败。",
+            "causes": [
+              "气孔：铝合金表面水分解氢、低熔点元素蒸发；冷却过快来不及逸出",
+              "未焊透：速度过快、功率不足、油污氧化膜",
+              "咬边：过快/间隙过大/功率过高或保护气过大、收弧能量骤降",
+              "装配间隙与高度差超限（书述经验：间隙小于熔深约15%、高度差小于熔深约25%量级）"
+            ],
+            "mechanism": "高反射/高导热铝需足够起始功率，熔化后吸收骤增；冶金气体与应力在快速凝固中被冻结为缺陷。 可检验预测：烘干清洁+惰保+优化脉冲波形应降气孔塌陷；降速增功率清表面应消未焊透。",
+            "risk": "漏液、壳体强度不足、内部热损伤隔膜。",
+            "countermeasures": [
+              "焊前烘干清洁；惰性保护；控间隙用工装点固",
+              "规范功率/速度/离焦；防咬边在焊透前提下采用较小功率较高焊速"
+            ],
+            "mechanism_node_id": "MT.FAIL.LEAK",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.LEAK"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-WELD-01",
+              "name": "盖板/极耳焊接剥离",
+              "use": "焊不足/过焊失效模式"
+            },
+            {
+              "id": "VM-LEAK-01",
+              "name": "气密性筛查",
+              "use": "壳盖焊漏液"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "短路/绝缘",
+              "use": "飞溅异物短路"
+            }
+          ],
+          "management": [
+            "焊前烘干清洁；惰性保护；控间隙用工装点固",
+            "规范功率/速度/离焦；防咬边在焊透前提下采用较小功率较高焊速",
+            "证据锚点：书卷3 §9.2.5–9.2.6 焊接性与缺陷预防（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-MOISTURE-001",
+      "card_id": "KC-BOOK-MOISTURE-001",
+      "title": "制程水分：HF 腐蚀与枝晶内短路路径",
+      "short": "制程水分",
+      "mechanism_node": "MT.PROC.FORM",
+      "tags": [
+        "moisture",
+        "HF",
+        "SEI",
+        "safety"
+      ],
+      "keywords": [
+        "水分",
+        "吸水",
+        "HF",
+        "露点",
+        "干燥",
+        "枝晶",
+        "腐蚀",
+        "制程水分",
+        "腐蚀与枝晶内短路路径",
+        "moisture",
+        "SEI",
+        "safety",
+        "MT.PROC.FORM",
+        "KC-BOOK-MOISTURE-001",
+        "MOISTURE"
+      ],
+      "excerpts": {
+        "mechanism": "水与锂盐反应生成强腐蚀性 HF 等，破坏 SEI/产气；杂质与水相关路径可促进枝晶生长致内短路（书安全章叙述）。 可检验预测：提高装配控湿+缩短干极片暴露+加深注液前真空干燥，应降低化成气量与早期失效。",
+        "diagram": "化成/水分与注液浸润强耦合；暂复用注液示意作上下文。 · 对应卡 KC-BOOK-MOISTURE-001",
+        "card": "注液前干燥后残留水偏高；化成产气异常、循环差；极端出现腐蚀与内短路。",
+        "verify": "水分与露点 / 老化电压降甄别 / 分容全检 / 安全抽检入口"
+      },
+      "nodes": [
+        "MT.PROC.FORM",
+        "MT.FAIL.SWELL",
+        "MT.FAIL.SC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 制程水分",
+          "summary": "水与锂盐反应生成强腐蚀性 HF 等，破坏 SEI/产气；杂质与水相关路径可促进枝晶生长致内短路（书安全章叙述）。 可检验预测：提高装配控湿+缩短干极片暴露+加深注液前真空干燥，应降低化成气量与早期失效。",
+          "chain": [
+            {
+              "id": "MT.PROC.FORM",
+              "name": "制程水分",
+              "def": "水与锂盐反应生成强腐蚀性 HF 等，破坏 SEI/产气；杂质与水相关路径可促进枝晶生长致内短路（书安全章叙述）。 可检验预测：提高装配控湿+缩短干极片暴露+加深注液前真空干燥，应降低化成气量与早期失效。",
+              "vars": [
+                "水分",
+                "吸水",
+                "HF",
+                "露点",
+                "干燥"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "环境露点/包装 → 吸潮",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "干燥工艺能力 → 残留水",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "水与锂盐反应生成强腐蚀性 HF 等，破坏 SEI/产气；杂质与水相关路径可促进枝晶生长致内短路（书安全章叙述）。 可检验预测：提高装配控湿+缩短干极片暴露+加深注液前真空干燥，应降低化成气量与早期失效。",
+            "极片真空干燥（书示例正/负极温度时间窗，需按材料重标）",
+            "分批快转装配注液；控制环境湿度"
+          ],
+          "hint": "推理先落点 MT.PROC.FORM，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "注液与浸润示意（书对齐 v1）",
+          "caption": "化成/水分与注液浸润强耦合；暂复用注液示意作上下文。 · 对应卡 KC-BOOK-MOISTURE-001",
+          "src": "assets/diagrams/electrolyte-fill-wetting-v1.svg",
+          "nodeId": "MT.PROC.FORM",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-MOISTURE-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-MOISTURE-001",
+            "title": "制程水分：HF 腐蚀与枝晶内短路路径",
+            "phenomenon": "注液前干燥后残留水偏高；化成产气异常、循环差；极端出现腐蚀与内短路。",
+            "causes": [
+              "原材料/极片/环境吸水进入电解液",
+              "干燥后转运暴露再吸潮",
+              "装配露点失控"
+            ],
+            "mechanism": "水与锂盐反应生成强腐蚀性 HF 等，破坏 SEI/产气；杂质与水相关路径可促进枝晶生长致内短路（书安全章叙述）。 可检验预测：提高装配控湿+缩短干极片暴露+加深注液前真空干燥，应降低化成气量与早期失效。",
+            "risk": "产气鼓胀、腐蚀铝塑膜内侧、枝晶短路、安全失效。",
+            "countermeasures": [
+              "极片真空干燥（书示例正/负极温度时间窗，需按材料重标）",
+              "分批快转装配注液；控制环境湿度",
+              "降低原材料含水量；干燥前尽量少带入水"
+            ],
+            "mechanism_node_id": "MT.PROC.FORM",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SWELL",
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-H2O-01",
+              "name": "水分与露点",
+              "use": "产气/HF 路径"
+            },
+            {
+              "id": "VM-FORM-01",
+              "name": "老化电压降甄别",
+              "use": "化成后自放电"
+            },
+            {
+              "id": "VM-GRADE-01",
+              "name": "分容全检",
+              "use": "容量/IR/厚度/外观"
+            },
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "水分/枝晶安全项"
+            }
+          ],
+          "management": [
+            "极片真空干燥（书示例正/负极温度时间窗，需按材料重标）",
+            "分批快转装配注液；控制环境湿度",
+            "证据锚点：书卷4 §10.3 与 §11.3.3 极片吸水安全叙述（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-PRESS-POWDER-001",
+      "card_id": "KC-BOOK-PRESS-POWDER-001",
+      "title": "辊压掉粉粘辊与表面颗粒突起",
+      "short": "辊压掉粉粘辊与表面颗粒突起",
+      "mechanism_node": "MT.PROC.PRESS",
+      "tags": [
+        "calendering",
+        "powder-drop",
+        "dust",
+        "short-risk"
+      ],
+      "keywords": [
+        "辊压",
+        "掉粉",
+        "粘辊",
+        "颗粒突起",
+        "刷粉",
+        "吸尘",
+        "辊压掉粉粘辊与表面颗粒突起",
+        "calendering",
+        "powder-drop",
+        "dust",
+        "short-risk",
+        "MT.PROC.PRESS",
+        "KC-BOOK-PRESS-POWDER-001",
+        "PRESS-POWDER"
+      ],
+      "excerpts": {
+        "mechanism": "脱落粉体粘辊后周期性转印形成突起；漏涂/气泡区辊压后成凹陷。 可检验预测：启用可靠刮粉/吸尘并提高粘结性后突起密度下降；故意提高压下应增多脱粉。",
+        "diagram": "辊压板形/掉粉落在主线中段。挂载 PRESS。 · 对应卡 KC-BOOK-PRESS-POWDER-001",
+        "card": "轧辊粘粉、极片表面颗粒突起/凹陷；刷粉吸尘后仍反复出现。",
+        "verify": "辊缝弹跳厚度控制 / 压实密度/空隙窗口 / 板形/表面缺陷标准板 / 剥离/划格/超声掉粉"
+      },
+      "nodes": [
+        "MT.PROC.PRESS",
+        "MT.FAIL.SC",
+        "MT.QA.OQC",
+        "MT.MAT.ELEC.BIND"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 辊压掉粉粘辊与表面颗粒突起",
+          "summary": "脱落粉体粘辊后周期性转印形成突起；漏涂/气泡区辊压后成凹陷。 可检验预测：启用可靠刮粉/吸尘并提高粘结性后突起密度下降；故意提高压下应增多脱粉。",
+          "chain": [
+            {
+              "id": "MT.PROC.PRESS",
+              "name": "辊压掉粉粘辊与表面颗粒突起",
+              "def": "脱落粉体粘辊后周期性转印形成突起；漏涂/气泡区辊压后成凹陷。 可检验预测：启用可靠刮粉/吸尘并提高粘结性后突起密度下降；故意提高压下应增多脱粉。",
+              "vars": [
+                "辊压",
+                "掉粉",
+                "粘辊",
+                "颗粒突起",
+                "刷粉"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.MAT.ELEC.BIND 粘结力 → 抗掉粉",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "辊压静电/湿度 → 粘辊",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "脱落粉体粘辊后周期性转印形成突起；漏涂/气泡区辊压后成凹陷。 可检验预测：启用可靠刮粉/吸尘并提高粘结性后突起密度下降；故意提高压下应增多脱粉。",
+            "轧辊除粉装置（一体/分体刮粉）可靠压靠",
+            "提高粘结性、辊面光洁；控制压下均匀"
+          ],
+          "hint": "推理先落点 MT.PROC.PRESS，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "辊压板形/掉粉落在主线中段。挂载 PRESS。 · 对应卡 KC-BOOK-PRESS-POWDER-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.PRESS",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-PRESS-POWDER-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-PRESS-POWDER-001",
+            "title": "辊压掉粉粘辊与表面颗粒突起",
+            "phenomenon": "轧辊粘粉、极片表面颗粒突起/凹陷；刷粉吸尘后仍反复出现。",
+            "causes": [
+              "活性物质滑移/吸潮 + 辊面静电导致掉粉粘辊再转印",
+              "粘结性不足或局部过厚导致辊压脱粉",
+              "压下过大；辊面光洁度差"
+            ],
+            "mechanism": "脱落粉体粘辊后周期性转印形成突起；漏涂/气泡区辊压后成凹陷。 可检验预测：启用可靠刮粉/吸尘并提高粘结性后突起密度下降；故意提高压下应增多脱粉。",
+            "risk": "颗粒刺穿隔膜 → 自放电/内短路；容量与安全下降。",
+            "countermeasures": [
+              "轧辊除粉装置（一体/分体刮粉）可靠压靠",
+              "提高粘结性、辊面光洁；控制压下均匀",
+              "分切前碳纤维毛刷+真空除尘"
+            ],
+            "mechanism_node_id": "MT.PROC.PRESS",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC",
+            "MT.QA.OQC",
+            "MT.MAT.ELEC.BIND"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-PRESS-01",
+              "name": "辊缝弹跳厚度控制",
+              "use": "厚度 SPC 与弹跳补偿"
+            },
+            {
+              "id": "VM-PRESS-02",
+              "name": "压实密度/空隙窗口",
+              "use": "压实 vs 孔隙 → 下游浸润"
+            },
+            {
+              "id": "VM-PRESS-04",
+              "name": "板形/表面缺陷标准板",
+              "use": "波浪/褶皱/突起对照"
+            },
+            {
+              "id": "VM-EL-ADH-01",
+              "name": "剥离/划格/超声掉粉",
+              "use": "粘结不足 → 掉粉粘辊"
+            }
+          ],
+          "management": [
+            "轧辊除粉装置（一体/分体刮粉）可靠压靠",
+            "提高粘结性、辊面光洁；控制压下均匀",
+            "证据锚点：书卷3 §6.7.2 刷粉吸尘与 §6.8.1 颗粒突起/粉体脱落（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-PRESS-SHAPE-001",
+      "card_id": "KC-BOOK-PRESS-SHAPE-001",
+      "title": "辊压板形缺陷：波浪/瓢曲/侧弯/褶皱/裂边",
+      "short": "辊压板形缺陷",
+      "mechanism_node": "MT.PROC.PRESS",
+      "tags": [
+        "calendering",
+        "flatness",
+        "wrinkle",
+        "edge-crack"
+      ],
+      "keywords": [
+        "辊压",
+        "板形",
+        "波浪",
+        "瓢曲",
+        "侧弯",
+        "褶皱",
+        "裂边",
+        "辊缝",
+        "辊压板形缺陷",
+        "calendering",
+        "flatness",
+        "wrinkle",
+        "edge-crack",
+        "MT.PROC.PRESS",
+        "KC-BOOK-PRESS-SHAPE-001",
+        "PRESS-SHAPE"
+      ],
+      "excerpts": {
+        "mechanism": "纵横向变形不均产生残余拉压应力，薄带失稳起波/起皱；边部拉应力过大则裂边。 可检验预测：均匀辊缝+合适凸度/张力应改善板形；降低压下、增大卷取张力使变形均匀可抑褶皱。",
+        "diagram": "辊压板形/掉粉落在主线中段。挂载 PRESS。 · 对应卡 KC-BOOK-PRESS-SHAPE-001",
+        "card": "辊压后极片出现波浪、瓢曲、侧弯、褶皱、翻边、裂边或起拱等板形不良。",
+        "verify": "辊缝弹跳厚度控制 / 压实密度/空隙窗口 / 板形/表面缺陷标准板 / 剥离/划格/超声掉粉"
+      },
+      "nodes": [
+        "MT.PROC.PRESS",
+        "MT.PROC.ASSY",
+        "MT.FAIL.SC",
+        "MT.FAIL.CAP",
+        "MT.PROC.COAT"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 辊压板形缺陷",
+          "summary": "纵横向变形不均产生残余拉压应力，薄带失稳起波/起皱；边部拉应力过大则裂边。 可检验预测：均匀辊缝+合适凸度/张力应改善板形；降低压下、增大卷取张力使变形均匀可抑褶皱。",
+          "chain": [
+            {
+              "id": "MT.PROC.PRESS",
+              "name": "辊压板形缺陷",
+              "def": "纵横向变形不均产生残余拉压应力，薄带失稳起波/起皱；边部拉应力过大则裂边。 可检验预测：均匀辊缝+合适凸度/张力应改善板形；降低压下、增大卷取张力使变形均匀可抑褶皱。",
+              "vars": [
+                "辊压",
+                "板形",
+                "波浪",
+                "瓢曲",
+                "侧弯"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PROC.COAT 面密度/板形 → 辊压变形场",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "轧辊凸度与热平衡 → 横向压下分布",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "纵横向变形不均产生残余拉压应力，薄带失稳起波/起皱；边部拉应力过大则裂边。 可检验预测：均匀辊缝+合适凸度/张力应改善板形；降低压下、增大卷取张力使变形均匀可抑褶皱。",
+            "高精度辊缝与来料厚度/强度一致性",
+            "匹配辊凸度、辊压力、张力；控制套筒圆度"
+          ],
+          "hint": "推理先落点 MT.PROC.PRESS，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "辊压板形/掉粉落在主线中段。挂载 PRESS。 · 对应卡 KC-BOOK-PRESS-SHAPE-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.PRESS",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-PRESS-SHAPE-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-PRESS-SHAPE-001",
+            "title": "辊压板形缺陷：波浪/瓢曲/侧弯/褶皱/裂边",
+            "phenomenon": "辊压后极片出现波浪、瓢曲、侧弯、褶皱、翻边、裂边或起拱等板形不良。",
+            "causes": [
+              "辊缝不均/周期性变化；凸度与辊压力/张力失配；压下过大",
+              "来料横向厚度或强度差；送料不正；卷取张力波动",
+              "套筒不圆、轧辊粗糙度/温度不均诱发花纹与褶皱"
+            ],
+            "mechanism": "纵横向变形不均产生残余拉压应力，薄带失稳起波/起皱；边部拉应力过大则裂边。 可检验预测：均匀辊缝+合适凸度/张力应改善板形；降低压下、增大卷取张力使变形均匀可抑褶皱。",
+            "risk": "分切蛇形、卷绕褶皱、厚度 Cpk 失效；裂边掉粉刺隔膜。",
+            "countermeasures": [
+              "高精度辊缝与来料厚度/强度一致性",
+              "匹配辊凸度、辊压力、张力；控制套筒圆度",
+              "辊压加热可减内应力反弹（书述）但需评估粘结剂窗口"
+            ],
+            "mechanism_node_id": "MT.PROC.PRESS",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.ASSY",
+            "MT.FAIL.SC",
+            "MT.FAIL.CAP",
+            "MT.PROC.COAT"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-PRESS-01",
+              "name": "辊缝弹跳厚度控制",
+              "use": "厚度 SPC 与弹跳补偿"
+            },
+            {
+              "id": "VM-PRESS-02",
+              "name": "压实密度/空隙窗口",
+              "use": "压实 vs 孔隙 → 下游浸润"
+            },
+            {
+              "id": "VM-PRESS-04",
+              "name": "板形/表面缺陷标准板",
+              "use": "波浪/褶皱/突起对照"
+            },
+            {
+              "id": "VM-EL-ADH-01",
+              "name": "剥离/划格/超声掉粉",
+              "use": "粘结不足 → 掉粉粘辊"
+            }
+          ],
+          "management": [
+            "高精度辊缝与来料厚度/强度一致性",
+            "匹配辊凸度、辊压力、张力；控制套筒圆度",
+            "证据锚点：书卷3 §6.8.1 表6-12 极片常见缺陷及防止措施（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-RS-WELD-001",
+      "card_id": "KC-BOOK-RS-WELD-001",
+      "title": "电阻点焊飞溅/缩孔/虚焊/粘连",
+      "short": "电阻点焊飞溅/缩孔/虚焊/粘连",
+      "mechanism_node": "MT.PROC.ASSY.TAB",
+      "tags": [
+        "resistance-weld",
+        "splash",
+        "cold-weld",
+        "tab"
+      ],
+      "keywords": [
+        "电阻焊",
+        "点焊",
+        "飞溅",
+        "缩孔",
+        "虚焊",
+        "粘连",
+        "极耳",
+        "电阻点焊飞溅",
+        "resistance-weld",
+        "splash",
+        "cold-weld",
+        "tab",
+        "MT.PROC.ASSY.TAB",
+        "KC-BOOK-RS-WELD-001",
+        "RS-WELD"
+      ],
+      "excerpts": {
+        "mechanism": "点焊靠接触+体内电阻热成核；塑性环密封熔核，规范失稳则喷溅/缩孔/粘连。 可检验预测：保压延长/提电极力抑缩孔；适度降电流时间+提压力抑飞溅；增电流时间或减压力/点距纠虚焊。",
+        "diagram": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-RS-WELD-001",
+        "card": "极耳-端子电阻点焊出现内部/外部飞溅、缩孔裂纹、电极粘连、虚焊弱焊、压痕过深或焊穿。",
+        "verify": "盖板/极耳焊接剥离 / 气密性筛查 / 短路/绝缘"
+      },
+      "nodes": [
+        "MT.PROC.ASSY.TAB",
+        "MT.FAIL.SC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 电阻点焊飞溅/缩孔/虚焊/粘连",
+          "summary": "点焊靠接触+体内电阻热成核；塑性环密封熔核，规范失稳则喷溅/缩孔/粘连。 可检验预测：保压延长/提电极力抑缩孔；适度降电流时间+提压力抑飞溅；增电流时间或减压力/点距纠虚焊。",
+          "chain": [
+            {
+              "id": "MT.PROC.ASSY.TAB",
+              "name": "电阻点焊飞溅/缩孔/虚焊/粘连",
+              "def": "点焊靠接触+体内电阻热成核；塑性环密封熔核，规范失稳则喷溅/缩孔/粘连。 可检验预测：保压延长/提电极力抑缩孔；适度降电流时间+提压力抑飞溅；增电流时间或减压力/点距纠虚焊。",
+              "vars": [
+                "电阻焊",
+                "点焊",
+                "飞溅",
+                "缩孔",
+                "虚焊"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "材料电阻率/导热 → 生热散热",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "电极几何与冷却 → 电流密度场",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "点焊靠接触+体内电阻热成核；塑性环密封熔核，规范失稳则喷溅/缩孔/粘连。 可检验预测：保压延长/提电极力抑缩孔；适度降电流时间+提压力抑飞溅；增电流时间或减压力/点距纠虚焊。",
+            "表面清理与预热；硬规范匹配材料",
+            "电极平行光洁冷却；点距足够防分流"
+          ],
+          "hint": "推理先落点 MT.PROC.ASSY.TAB，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-RS-WELD-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.ASSY.TAB",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-RS-WELD-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-RS-WELD-001",
+            "title": "电阻点焊飞溅/缩孔/虚焊/粘连",
+            "phenomenon": "极耳-端子电阻点焊出现内部/外部飞溅、缩孔裂纹、电极粘连、虚焊弱焊、压痕过深或焊穿。",
+            "causes": [
+              "飞溅：热输入过大、电极压力不足、塑性环被熔核赶上",
+              "缩孔：断电后过早卸压，中心凝固缺补缩",
+              "虚焊：电流密度不足（分流、电极过大、压力过大降接触电阻等）",
+              "粘连：电极-工件局部接触电阻过高",
+              "表面异物、电极尖、冷却不足"
+            ],
+            "mechanism": "点焊靠接触+体内电阻热成核；塑性环密封熔核，规范失稳则喷溅/缩孔/粘连。 可检验预测：保压延长/提电极力抑缩孔；适度降电流时间+提压力抑飞溅；增电流时间或减压力/点距纠虚焊。",
+            "risk": "连接强度不足、表面烧蚀污染、后续封装漏液路径。",
+            "countermeasures": [
+              "表面清理与预热；硬规范匹配材料",
+              "电极平行光洁冷却；点距足够防分流",
+              "外观+破坏性抽检识别虚焊（塑性环不完整等）"
+            ],
+            "mechanism_node_id": "MT.PROC.ASSY.TAB",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-WELD-01",
+              "name": "盖板/极耳焊接剥离",
+              "use": "焊不足/过焊失效模式"
+            },
+            {
+              "id": "VM-LEAK-01",
+              "name": "气密性筛查",
+              "use": "壳盖焊漏液"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "短路/绝缘",
+              "use": "飞溅异物短路"
+            }
+          ],
+          "management": [
+            "表面清理与预热；硬规范匹配材料",
+            "电极平行光洁冷却；点距足够防分流",
+            "证据锚点：书卷3 §9.4.5 缺陷及预防（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SAFE-PROCESS-001",
+      "card_id": "KC-BOOK-SAFE-PROCESS-001",
+      "title": "制程缺陷耦合：厚度不均/毛刺/灰尘/吸水推向热失控前兆",
+      "short": "制程缺陷耦合",
+      "mechanism_node": "MT.FAIL.SC",
+      "tags": [
+        "safety",
+        "thermal-runaway",
+        "process-defect",
+        "consistency"
+      ],
+      "keywords": [
+        "安全",
+        "热失控",
+        "厚度不均",
+        "毛刺",
+        "灰尘",
+        "吸水",
+        "一致性",
+        "制程缺陷耦合",
+        "吸水推向热失控前兆",
+        "safety",
+        "thermal-runaway",
+        "process-defect",
+        "consistency",
+        "MT.FAIL.SC",
+        "KC-BOOK-SAFE-PROCESS-001",
+        "SAFE-PROCESS"
+      ],
+      "excerpts": {
+        "mechanism": "局部析锂与微短路提供持续热源，触发电解液/正极放氧等链式放热，越过散热能力即热失控。 可检验预测：收紧涂布厚度 Cpk、毛刺粉尘门禁与露点后，滥用/针刺等安全项通过率应改善（需本厂验证）。",
+        "diagram": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SAFE-PROCESS-001",
+        "card": "动力电芯安全失效追溯常见非材料本征，而是制造缺陷叠加（厚度不均、毛刺、松紧度、灰尘、吸水）。",
+        "verify": "安全抽检入口 / 一致性指标 / 毛刺与切口 / 水分与露点"
+      },
+      "nodes": [
+        "MT.FAIL.SC",
+        "MT.QA.SPC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 制程缺陷耦合",
+          "summary": "局部析锂与微短路提供持续热源，触发电解液/正极放氧等链式放热，越过散热能力即热失控。 可检验预测：收紧涂布厚度 Cpk、毛刺粉尘门禁与露点后，滥用/针刺等安全项通过率应改善（需本厂验证）。",
+          "chain": [
+            {
+              "id": "MT.FAIL.SC",
+              "name": "制程缺陷耦合",
+              "def": "局部析锂与微短路提供持续热源，触发电解液/正极放氧等链式放热，越过散热能力即热失控。 可检验预测：收紧涂布厚度 Cpk、毛刺粉尘门禁与露点后，滥用/针刺等安全项通过率应改善（需本厂验证）。",
+              "vars": [
+                "安全",
+                "热失控",
+                "厚度不均",
+                "毛刺",
+                "灰尘"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "涂布/辊压/分切/装配各卡 → 缺陷输入",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "MT.QA.SPC 失控 → 缺陷逃逸",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "局部析锂与微短路提供持续热源，触发电解液/正极放氧等链式放热，越过散热能力即热失控。 可检验预测：收紧涂布厚度 Cpk、毛刺粉尘门禁与露点后，滥用/针刺等安全项通过率应改善（需本厂验证）。",
+            "工艺精密化与在线检（毛刺、粉尘、短路、水分）",
+            "结构设计（安全阀/绝缘）与材料选择并行，但不替代制程控缺"
+          ],
+          "hint": "推理先落点 MT.FAIL.SC，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SAFE-PROCESS-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.FAIL.SC",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SAFE-PROCESS-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SAFE-PROCESS-001",
+            "title": "制程缺陷耦合：厚度不均/毛刺/灰尘/吸水推向热失控前兆",
+            "phenomenon": "动力电芯安全失效追溯常见非材料本征，而是制造缺陷叠加（厚度不均、毛刺、松紧度、灰尘、吸水）。",
+            "causes": [
+              "极片厚度不均 → 局部过充析锂",
+              "毛刺/灰尘 → 刺隔膜微短路发热",
+              "吸水 → HF/产气/腐蚀",
+              "自动化精度不足导致一致性差，短板单体在成组中过载"
+            ],
+            "mechanism": "局部析锂与微短路提供持续热源，触发电解液/正极放氧等链式放热，越过散热能力即热失控。 可检验预测：收紧涂布厚度 Cpk、毛刺粉尘门禁与露点后，滥用/针刺等安全项通过率应改善（需本厂验证）。",
+            "risk": "单体热失控蔓延至模组/车辆级事故。",
+            "countermeasures": [
+              "工艺精密化与在线检（毛刺、粉尘、短路、水分）",
+              "结构设计（安全阀/绝缘）与材料选择并行，但不替代制程控缺",
+              "一致性筛选降低成组短板"
+            ],
+            "mechanism_node_id": "MT.FAIL.SC",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC",
+            "MT.QA.SPC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "热失控前兆筛查"
+            },
+            {
+              "id": "VM-CONS-01",
+              "name": "一致性指标",
+              "use": "短板放大风险"
+            },
+            {
+              "id": "VM-SLIT-01",
+              "name": "毛刺与切口",
+              "use": "制程缺陷输入"
+            },
+            {
+              "id": "VM-H2O-01",
+              "name": "水分与露点",
+              "use": "吸水耦合"
+            }
+          ],
+          "management": [
+            "工艺精密化与在线检（毛刺、粉尘、短路、水分）",
+            "结构设计（安全阀/绝缘）与材料选择并行，但不替代制程控缺",
+            "证据锚点：书卷4 §11.3.1–11.3.3 热失控与设备工艺安全（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SEAL-WINDOW-001",
+      "card_id": "KC-BOOK-SEAL-WINDOW-001",
+      "title": "铝塑膜热封窗口失配致虚封/过熔漏液",
+      "short": "铝塑膜热封窗口失配致虚封/过熔漏液",
+      "mechanism_node": "MT.PKG.AL.SEALIF",
+      "tags": [
+        "heat-seal",
+        "pouch",
+        "CPP",
+        "leak",
+        "peel-strength"
+      ],
+      "keywords": [
+        "热封",
+        "铝塑",
+        "虚封",
+        "过熔",
+        "拉力",
+        "窗口",
+        "漏液",
+        "二封",
+        "铝塑膜热封窗口失配致虚封",
+        "过熔漏液",
+        "heat-seal",
+        "pouch",
+        "CPP",
+        "leak",
+        "peel-strength",
+        "MT.PKG.AL.SEALIF",
+        "KC-BOOK-SEAL-WINDOW-001",
+        "SEAL-WINDOW"
+      ],
+      "excerpts": {
+        "mechanism": "热量经 ON→Al→CPP/极耳胶传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）； 窗口内大分子扩散缠结成封，窗外则虚封或过熔。 可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶需更高设定（书示例侧/底约 185℃、顶约 215±5℃，须按本厂膜材重标…",
+        "diagram": "多层铝塑截面；热封窗口与虚封/过熔对照。挂载 PKG.AL / SEALIF。 · 对应卡 KC-BOOK-SEAL-WINDOW-001",
+        "card": "软包热封后拉力不足、漏液、封边变形烧焦或半切断；极耳处更易出问题。",
+        "verify": "微焦 X 射线覆盖/对齐 / 卷绕后短路/绝缘 / 一致性指标"
+      },
+      "nodes": [
+        "MT.PKG.AL.SEALIF",
+        "MT.FAIL.LEAK",
+        "MT.PKG.AL.STACK"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 铝塑膜热封窗口失配致虚封/过熔漏液",
+          "summary": "热量经 ON→Al→CPP/极耳胶传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）； 窗口内大分子扩散缠结成封，窗外则虚封或过熔。 可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶需更高设定（书示例侧/底约 185℃、顶约 215±5℃，须按本厂膜材重标定）。",
+          "chain": [
+            {
+              "id": "MT.PKG.AL.SEALIF",
+              "name": "铝塑膜热封窗口失配致虚封/过熔漏液",
+              "def": "热量经 ON→Al→CPP/极耳胶传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）； 窗口内大分子扩散缠结成封，窗外则虚封或过熔。 可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶需更高设定（书示例侧/底约 185℃、顶约 215±5℃，须按本厂膜材重标定）。",
+              "vars": [
+                "热封",
+                "铝塑",
+                "虚封",
+                "过熔",
+                "拉力"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PKG.AL.STACK / MAT.ALF CPP 熔限 → 窗口",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "封头温度场与压力均匀性 → 局部虚封",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "热量经 ON→Al→CPP/极耳胶传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）； 窗口内大分子扩散缠结成封，窗外则虚封或过熔。 可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶需更高设定（书示例侧/底约 185℃、顶约 215±5℃，须按本厂膜材重标定）。",
+            "按 DSC/TG 定熔限再 DOE 拉力窗口；宁低时长短热辐射影响",
+            "凹凸模控封后厚度，防极耳触铝箔短路"
+          ],
+          "hint": "推理先落点 MT.PKG.AL.SEALIF，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "铝塑膜截面与热封界面示意",
+          "caption": "多层铝塑截面；热封窗口与虚封/过熔对照。挂载 PKG.AL / SEALIF。 · 对应卡 KC-BOOK-SEAL-WINDOW-001",
+          "src": "assets/diagrams/al-laminate-cross-section-v0.svg",
+          "nodeId": "MT.PKG.AL.SEALIF",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SEAL-WINDOW-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SEAL-WINDOW-001",
+            "title": "铝塑膜热封窗口失配致虚封/过熔漏液",
+            "phenomenon": "软包热封后拉力不足、漏液、封边变形烧焦或半切断；极耳处更易出问题。",
+            "causes": [
+              "T/P/t 低于窗口：CPP 未充分熔合",
+              "温度近上限或超时：PP 过熔溢出、微裂纹、烧焦变形",
+              "压力过低强度不够；过高挤走热封料形成半切断",
+              "注液残留污染封口；极耳被电解液长期腐蚀；层间粘结不足分层"
+            ],
+            "mechanism": "热量经 ON→Al→CPP/极耳胶传递，封头显示温度通常高于界面实际约 10℃ 量级（书述）； 窗口内大分子扩散缠结成封，窗外则虚封或过熔。 可检验预测：在熔限内扫描 T 应出现拉力峰后回落；顶封因极耳胶需更高设定（书示例侧/底约 185℃、顶约 215±5℃，须按本厂膜材重标定）。",
+            "risk": "MT.FAIL.LEAK；短路（极耳触 Al）；客户漏液投诉。",
+            "countermeasures": [
+              "按 DSC/TG 定熔限再 DOE 拉力窗口；宁低时长短热辐射影响",
+              "凹凸模控封后厚度，防极耳触铝箔短路",
+              "清洁封口、控预留位；铁氟龙/硅胶条保护封头"
+            ],
+            "mechanism_node_id": "MT.PKG.AL.SEALIF",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.LEAK",
+            "MT.PKG.AL.SEALIF",
+            "MT.PKG.AL.STACK"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-ASSY-01",
+              "name": "微焦 X 射线覆盖/对齐",
+              "use": "褶皱/螺旋/错位"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "卷绕后短路/绝缘",
+              "use": "张力失控致刺膜风险"
+            },
+            {
+              "id": "VM-CONS-01",
+              "name": "一致性指标",
+              "use": "松紧度差异批次"
+            }
+          ],
+          "management": [
+            "按 DSC/TG 定熔限再 DOE 拉力窗口；宁低时长短热辐射影响",
+            "凹凸模控封后厚度，防极耳触铝箔短路",
+            "证据锚点：书卷3 §9.5 热封装原理、窗口、拉力与漏液原因（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SLIT-BURR-001",
+      "card_id": "KC-BOOK-SLIT-BURR-001",
+      "title": "分切毛刺刺穿隔膜引发短路与自放电",
+      "short": "分切毛刺刺穿隔膜引发短路与自放电",
+      "mechanism_node": "MT.FAIL.SC",
+      "tags": [
+        "slitting",
+        "burr",
+        "separator",
+        "short",
+        "self-discharge"
+      ],
+      "keywords": [
+        "分切",
+        "毛刺",
+        "隔膜",
+        "短路",
+        "自放电",
+        "刃口",
+        "Hi-pot",
+        "分切毛刺刺穿隔膜引发短路与自放电",
+        "slitting",
+        "burr",
+        "separator",
+        "short",
+        "self-discharge",
+        "MT.FAIL.SC",
+        "KC-BOOK-SLIT-BURR-001",
+        "SLIT-BURR"
+      ],
+      "excerpts": {
+        "mechanism": "尖而薄毛刺垂直集流体平面更易刺隔膜；充放电膨胀/注液溶胀拉近极片-隔膜间距，使更短毛刺陆续导通。 可检验预测：优化刃口与水平间隙后毛刺高度与自放电率应同降；水平间隙增大实验可见自放电趋势上升（书述）。",
+        "diagram": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SLIT-BURR-001",
+        "card": "分切后边缘毛刺超标；Hi-pot/导通检或搁置后自放电升高；严重者装壳即短路。",
+        "verify": "毛刺与切口质量 / 卷绕后短路/绝缘 / 老化电压降甄别 / 安全抽检入口"
+      },
+      "nodes": [
+        "MT.FAIL.SC",
+        "MT.PROC.PRESS"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 分切毛刺刺穿隔膜引发短路与自放电",
+          "summary": "尖而薄毛刺垂直集流体平面更易刺隔膜；充放电膨胀/注液溶胀拉近极片-隔膜间距，使更短毛刺陆续导通。 可检验预测：优化刃口与水平间隙后毛刺高度与自放电率应同降；水平间隙增大实验可见自放电趋势上升（书述）。",
+          "chain": [
+            {
+              "id": "MT.FAIL.SC",
+              "name": "分切毛刺刺穿隔膜引发短路与自放电",
+              "def": "尖而薄毛刺垂直集流体平面更易刺隔膜；充放电膨胀/注液溶胀拉近极片-隔膜间距，使更短毛刺陆续导通。 可检验预测：优化刃口与水平间隙后毛刺高度与自放电率应同降；水平间隙增大实验可见自放电趋势上升（书述）。",
+              "vars": [
+                "分切",
+                "毛刺",
+                "隔膜",
+                "短路",
+                "自放电"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PROC.PRESS 板形/粘结 → 剪切断面质量",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "刀具间隙与刃态 → 毛刺形态",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "尖而薄毛刺垂直集流体平面更易刺隔膜；充放电膨胀/注液溶胀拉近极片-隔膜间距，使更短毛刺陆续导通。 可检验预测：优化刃口与水平间隙后毛刺高度与自放电率应同降；水平间隙增大实验可见自放电趋势上升（书述）。",
+            "保持刃口锋利与润滑；合理水平/垂直间隙",
+            "辊边压平、边缘涂胶/贴胶、等离子体去毛刺等后处理（按产线）"
+          ],
+          "hint": "推理先落点 MT.FAIL.SC，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SLIT-BURR-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.FAIL.SC",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SLIT-BURR-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SLIT-BURR-001",
+            "title": "分切毛刺刺穿隔膜引发短路与自放电",
+            "phenomenon": "分切后边缘毛刺超标；Hi-pot/导通检或搁置后自放电升高；严重者装壳即短路。",
+            "causes": [
+              "剪刃钝、润滑不良、水平间隙过大 → 撕裂面增大、毛刺增多",
+              "单面涂或纯箔剪切毛刺更显著",
+              "隔膜变薄、壳体压紧使临界毛刺高度下降"
+            ],
+            "mechanism": "尖而薄毛刺垂直集流体平面更易刺隔膜；充放电膨胀/注液溶胀拉近极片-隔膜间距，使更短毛刺陆续导通。 可检验预测：优化刃口与水平间隙后毛刺高度与自放电率应同降；水平间隙增大实验可见自放电趋势上升（书述）。",
+            "risk": "内短路、膨胀起火路径；高温下隔膜强度下降风险放大。",
+            "countermeasures": [
+              "保持刃口锋利与润滑；合理水平/垂直间隙",
+              "辊边压平、边缘涂胶/贴胶、等离子体去毛刺等后处理（按产线）",
+              "导通/缝隙电流法抽检毛刺高度"
+            ],
+            "mechanism_node_id": "MT.FAIL.SC",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC",
+            "MT.PROC.PRESS"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SLIT-01",
+              "name": "毛刺与切口质量",
+              "use": "毛刺高度/形貌；间隙与刃态"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "卷绕后短路/绝缘",
+              "use": "毛刺粉尘导致的微短路门禁"
+            },
+            {
+              "id": "VM-FORM-01",
+              "name": "老化电压降甄别",
+              "use": "自放电批次筛选"
+            },
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "短路风险升安全项"
+            }
+          ],
+          "management": [
+            "保持刃口锋利与润滑；合理水平/垂直间隙",
+            "辊边压平、边缘涂胶/贴胶、等离子体去毛刺等后处理（按产线）",
+            "证据锚点：书卷3 §7.6.1–7.6.2 毛刺成因、检测与影响（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SLIT-DUST-001",
+      "card_id": "KC-BOOK-SLIT-DUST-001",
+      "title": "分切粉尘粒径控制与自放电",
+      "short": "分切粉尘粒径控制与自放电",
+      "mechanism_node": "MT.FAIL.SC",
+      "tags": [
+        "slitting",
+        "dust",
+        "self-discharge",
+        "clean"
+      ],
+      "keywords": [
+        "分切",
+        "粉尘",
+        "粒径",
+        "自放电",
+        "除尘",
+        "刷粉",
+        "分切粉尘粒径控制与自放电",
+        "slitting",
+        "dust",
+        "self-discharge",
+        "clean",
+        "MT.FAIL.SC",
+        "KC-BOOK-SLIT-DUST-001",
+        "SLIT-DUST"
+      ],
+      "excerpts": {
+        "mechanism": "粉尘以突出点接触隔膜，反复膨胀收缩磨损/微短路，表现为自放电；过大颗粒可刺穿。 可检验预测：刷粉+真空后残留最大粒径下降，自放电分布改善；书述卷绕前表面粉尘最大颗粒度控制示例约 <8 μm（须按本厂标校准）。",
+        "diagram": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SLIT-DUST-001",
+        "card": "分切后极片表面残留粉尘；自放电升高但未必立即硬短路。",
+        "verify": "毛刺与切口质量 / 卷绕后短路/绝缘 / 老化电压降甄别 / 安全抽检入口"
+      },
+      "nodes": [
+        "MT.FAIL.SC"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 分切粉尘粒径控制与自放电",
+          "summary": "粉尘以突出点接触隔膜，反复膨胀收缩磨损/微短路，表现为自放电；过大颗粒可刺穿。 可检验预测：刷粉+真空后残留最大粒径下降，自放电分布改善；书述卷绕前表面粉尘最大颗粒度控制示例约 <8 μm（须按本厂标校准）。",
+          "chain": [
+            {
+              "id": "MT.FAIL.SC",
+              "name": "分切粉尘粒径控制与自放电",
+              "def": "粉尘以突出点接触隔膜，反复膨胀收缩磨损/微短路，表现为自放电；过大颗粒可刺穿。 可检验预测：刷粉+真空后残留最大粒径下降，自放电分布改善；书述卷绕前表面粉尘最大颗粒度控制示例约 <8 μm（须按本厂标校准）。",
+              "vars": [
+                "分切",
+                "粉尘",
+                "粒径",
+                "自放电",
+                "除尘"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "剪切间隙/刃态 → 掉粉量",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "涂层粘结性 → 粉尘源强度",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "粉尘以突出点接触隔膜，反复膨胀收缩磨损/微短路，表现为自放电；过大颗粒可刺穿。 可检验预测：刷粉+真空后残留最大粒径下降，自放电分布改善；书述卷绕前表面粉尘最大颗粒度控制示例约 <8 μm（须按本厂标校准）。",
+            "提粘结、减毛刺翻边、环境洁净",
+            "毛刷+真空除尘；粒径/数量抽检门禁"
+          ],
+          "hint": "推理先落点 MT.FAIL.SC，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "毛刺/粉尘/制程耦合短路：复用极片主线（分切—卷绕区）。 · 对应卡 KC-BOOK-SLIT-DUST-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.FAIL.SC",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SLIT-DUST-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SLIT-DUST-001",
+            "title": "分切粉尘粒径控制与自放电",
+            "phenomenon": "分切后极片表面残留粉尘；自放电升高但未必立即硬短路。",
+            "causes": [
+              "剪切区拉伸使涂层边缘掉粉；毛刺/翻边伴生粉尘",
+              "粘结性差、环境尘污染",
+              "垂直/水平间隙不当延长撕裂区（翻边）"
+            ],
+            "mechanism": "粉尘以突出点接触隔膜，反复膨胀收缩磨损/微短路，表现为自放电；过大颗粒可刺穿。 可检验预测：刷粉+真空后残留最大粒径下降，自放电分布改善；书述卷绕前表面粉尘最大颗粒度控制示例约 <8 μm（须按本厂标校准）。",
+            "risk": "自放电批次；离子扩散路径增长降效率；极端刺穿短路。",
+            "countermeasures": [
+              "提粘结、减毛刺翻边、环境洁净",
+              "毛刷+真空除尘；粒径/数量抽检门禁"
+            ],
+            "mechanism_node_id": "MT.FAIL.SC",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SLIT-01",
+              "name": "毛刺与切口质量",
+              "use": "毛刺高度/形貌；间隙与刃态"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "卷绕后短路/绝缘",
+              "use": "毛刺粉尘导致的微短路门禁"
+            },
+            {
+              "id": "VM-FORM-01",
+              "name": "老化电压降甄别",
+              "use": "自放电批次筛选"
+            },
+            {
+              "id": "VM-SAFE-01",
+              "name": "安全抽检入口",
+              "use": "短路风险升安全项"
+            }
+          ],
+          "management": [
+            "提粘结、减毛刺翻边、环境洁净",
+            "毛刷+真空除尘；粒径/数量抽检门禁",
+            "证据锚点：书卷3 §7.6 粉尘与翻边及影响（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SLURRY-CMC-001",
+      "card_id": "KC-BOOK-SLURRY-CMC-001",
+      "title": "负极水性浆料 CMC 窗口失稳导致凝胶/沉降",
+      "short": "负极水性浆料 CMC 窗口失稳导致凝胶/沉降",
+      "mechanism_node": "MT.MAT.ELEC.BIND",
+      "tags": [
+        "slurry",
+        "CMC",
+        "gel",
+        "anode",
+        "aqueous"
+      ],
+      "keywords": [
+        "浆料",
+        "制浆",
+        "CMC",
+        "凝胶",
+        "沉降",
+        "负极",
+        "水性",
+        "粘度",
+        "SBR",
+        "负极水性浆料",
+        "窗口失稳导致凝胶",
+        "slurry",
+        "gel",
+        "anode",
+        "aqueous",
+        "MT.MAT.ELEC.BIND",
+        "KC-BOOK-SLURRY-CMC-001",
+        "SLURRY-CMC"
+      ],
+      "excerpts": {
+        "mechanism": "CMC 在石墨表面吸附产生静电/空间斥力，存在「过低聚团—适中分散—过高聚合物凝胶」窗口。 可检验预测：在固定固含量下扫描 CMC 质量分数，流变从凝胶→类液体→再凝胶，形貌应同步变化。",
+        "diagram": "浆料粘结剂窗口：复用极片主线上游涂布入口。 · 对应卡 KC-BOOK-SLURRY-CMC-001",
+        "card": "石墨水性浆料在放置或涂布前出现凝胶化、沉降或粘度失控；涂布后局部面密度波动。",
+        "verify": "黏度法表征分散 / 刮板细度 / 粒度 / 同高度固含量沉降 / 真空脱气与过滤关卡"
+      },
+      "nodes": [
+        "MT.MAT.ELEC.BIND",
+        "MT.PROC.COAT",
+        "MT.FAIL.CAP",
+        "MT.MAT.ELEC.AN"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 负极水性浆料 CMC 窗口失稳导致凝胶/沉降",
+          "summary": "CMC 在石墨表面吸附产生静电/空间斥力，存在「过低聚团—适中分散—过高聚合物凝胶」窗口。 可检验预测：在固定固含量下扫描 CMC 质量分数，流变从凝胶→类液体→再凝胶，形貌应同步变化。",
+          "chain": [
+            {
+              "id": "MT.MAT.ELEC.BIND",
+              "name": "负极水性浆料 CMC 窗口失稳导致凝胶/沉降",
+              "def": "CMC 在石墨表面吸附产生静电/空间斥力，存在「过低聚团—适中分散—过高聚合物凝胶」窗口。 可检验预测：在固定固含量下扫描 CMC 质量分数，流变从凝胶→类液体→再凝胶，形貌应同步变化。",
+              "vars": [
+                "浆料",
+                "制浆",
+                "CMC",
+                "凝胶",
+                "沉降"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.MAT.ELEC.AN / BIND 表面极性与助剂选择 → 分散稳定性",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "干混/分步加溶剂工艺 → 初始网络均匀性",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "CMC 在石墨表面吸附产生静电/空间斥力，存在「过低聚团—适中分散—过高聚合物凝胶」窗口。 可检验预测：在固定固含量下扫描 CMC 质量分数，流变从凝胶→类液体→再凝胶，形貌应同步变化。",
+            "固定剪切历史后做 CMC DOE，锁定分散窗口而非抄配方百分比",
+            "控制浆料静置时间；超时复检粘度/沉降"
+          ],
+          "hint": "推理先落点 MT.MAT.ELEC.BIND，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "浆料粘结剂窗口：复用极片主线上游涂布入口。 · 对应卡 KC-BOOK-SLURRY-CMC-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.MAT.ELEC.BIND",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SLURRY-CMC-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SLURRY-CMC-001",
+            "title": "负极水性浆料 CMC 窗口失稳导致凝胶/沉降",
+            "phenomenon": "石墨水性浆料在放置或涂布前出现凝胶化、沉降或粘度失控；涂布后局部面密度波动。",
+            "causes": [
+              "CMC 浓度过低：石墨疏水聚集形成颗粒凝胶",
+              "CMC 浓度过高：聚合物自身网络凝胶，浆料假塑性异常",
+              "SBR/CMC 竞争吸附；静置过久粘结剂网络破坏、炭黑再团聚"
+            ],
+            "mechanism": "CMC 在石墨表面吸附产生静电/空间斥力，存在「过低聚团—适中分散—过高聚合物凝胶」窗口。 可检验预测：在固定固含量下扫描 CMC 质量分数，流变从凝胶→类液体→再凝胶，形貌应同步变化。",
+            "risk": "涂布条纹/面密度波动 → 压实与容量一致性差；局部导电网络断裂抬升内阻。",
+            "countermeasures": [
+              "固定剪切历史后做 CMC DOE，锁定分散窗口而非抄配方百分比",
+              "控制浆料静置时间；超时复检粘度/沉降",
+              "监控 SBR 与 CMC 配比，避免高 CMC 置换导致 SBR 游离"
+            ],
+            "mechanism_node_id": "MT.MAT.ELEC.BIND",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.COAT",
+            "MT.FAIL.CAP",
+            "MT.MAT.ELEC.AN"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SLURRY-01",
+              "name": "黏度法表征分散",
+              "use": "固定剪切下粘度趋势；分散不足 vs 固含量漂移"
+            },
+            {
+              "id": "VM-SLURRY-02",
+              "name": "刮板细度 / 粒度",
+              "use": "团聚/硬颗粒上限；涂布拉丝前筛查"
+            },
+            {
+              "id": "VM-SLURRY-03",
+              "name": "同高度固含量沉降",
+              "use": "静置稳定性与持浆窗口"
+            },
+            {
+              "id": "VM-SLURRY-04",
+              "name": "真空脱气与过滤关卡",
+              "use": "气泡/ grit 门禁；头前二次过滤"
+            }
+          ],
+          "management": [
+            "固定剪切历史后做 CMC DOE，锁定分散窗口而非抄配方百分比",
+            "控制浆料静置时间；超时复检粘度/沉降",
+            "证据锚点：书卷2 第4章 4.6.3：石墨/CMC/SBR 浓度窗口叙述（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-SLURRY-H2O-NMP-001",
+      "card_id": "KC-BOOK-SLURRY-H2O-NMP-001",
+      "title": "正极 NMP 浆料微量水分破坏分散电位窗口",
+      "short": "正极 NMP 浆料微量水分破坏分散电位窗口",
+      "mechanism_node": "MT.PROC.COAT",
+      "tags": [
+        "slurry",
+        "NMP",
+        "moisture",
+        "cathode",
+        "dispersion"
+      ],
+      "keywords": [
+        "浆料",
+        "NMP",
+        "正极",
+        "水分",
+        "分散",
+        "增稠",
+        "聚团",
+        "露点",
+        "浆料微量水分破坏分散电位窗口",
+        "slurry",
+        "moisture",
+        "cathode",
+        "dispersion",
+        "MT.PROC.COAT",
+        "KC-BOOK-SLURRY-H2O-NMP-001",
+        "SLURRY-H2O-NMP"
+      ],
+      "excerpts": {
+        "mechanism": "非水体系中微量水离解吸附可先抬升表面电位（利于分散），过量后电位回落导致聚团沉降。 可检验预测：同一浆料阶梯加湿，Zeta/流变应先稳后失稳；严格控水应压低漂移。",
+        "diagram": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-SLURRY-H2O-NMP-001",
+        "card": "正极有机体系浆料出现异常增稠、聚团沉降或批次间流变漂移；无明显配方变更。",
+        "verify": "黏度法表征分散 / 刮板细度 / 粒度 / 同高度固含量沉降 / 真空脱气与过滤关卡"
+      },
+      "nodes": [
+        "MT.PROC.COAT",
+        "MT.QA.SPC",
+        "MT.QA.IQC",
+        "MT.MAT.ELEC.CAT"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 正极 NMP 浆料微量水分破坏分散电位窗口",
+          "summary": "非水体系中微量水离解吸附可先抬升表面电位（利于分散），过量后电位回落导致聚团沉降。 可检验预测：同一浆料阶梯加湿，Zeta/流变应先稳后失稳；严格控水应压低漂移。",
+          "chain": [
+            {
+              "id": "MT.PROC.COAT",
+              "name": "正极 NMP 浆料微量水分破坏分散电位窗口",
+              "def": "非水体系中微量水离解吸附可先抬升表面电位（利于分散），过量后电位回落导致聚团沉降。 可检验预测：同一浆料阶梯加湿，Zeta/流变应先稳后失稳；严格控水应压低漂移。",
+              "vars": [
+                "浆料",
+                "NMP",
+                "正极",
+                "水分",
+                "分散"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.QA.IQC 溶剂/粉体水分 → 浆料电位",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "环境露点/敞口搅拌 → 吸潮速率",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "非水体系中微量水离解吸附可先抬升表面电位（利于分散），过量后电位回落导致聚团沉降。 可检验预测：同一浆料阶梯加湿，Zeta/流变应先稳后失稳；严格控水应压低漂移。",
+            "正极制浆严格控水（原料、溶剂、环境露点）",
+            "浆料锅密封与恒温输送；IQC 溶剂水分"
+          ],
+          "hint": "推理先落点 MT.PROC.COAT，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "涂布/干燥弊病与下游辊压卷绕遗传。挂载 COAT 系。 · 对应卡 KC-BOOK-SLURRY-H2O-NMP-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.COAT",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-SLURRY-H2O-NMP-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-SLURRY-H2O-NMP-001",
+            "title": "正极 NMP 浆料微量水分破坏分散电位窗口",
+            "phenomenon": "正极有机体系浆料出现异常增稠、聚团沉降或批次间流变漂移；无明显配方变更。",
+            "causes": [
+              "体系微量水分先升后降改变颗粒表面电位，越过稳定区",
+              "溶剂/粉体吸潮；搅拌敞口；原料带水"
+            ],
+            "mechanism": "非水体系中微量水离解吸附可先抬升表面电位（利于分散），过量后电位回落导致聚团沉降。 可检验预测：同一浆料阶梯加湿，Zeta/流变应先稳后失稳；严格控水应压低漂移。",
+            "risk": "涂布窗口漂移、条道/气泡增多；极片导电网络与粘结一致性变差。",
+            "countermeasures": [
+              "正极制浆严格控水（原料、溶剂、环境露点）",
+              "浆料锅密封与恒温输送；IQC 溶剂水分",
+              "异常增稠先查水分再改配方"
+            ],
+            "mechanism_node_id": "MT.PROC.COAT",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.COAT",
+            "MT.QA.SPC",
+            "MT.QA.IQC",
+            "MT.MAT.ELEC.CAT"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-SLURRY-01",
+              "name": "黏度法表征分散",
+              "use": "固定剪切下粘度趋势；分散不足 vs 固含量漂移"
+            },
+            {
+              "id": "VM-SLURRY-02",
+              "name": "刮板细度 / 粒度",
+              "use": "团聚/硬颗粒上限；涂布拉丝前筛查"
+            },
+            {
+              "id": "VM-SLURRY-03",
+              "name": "同高度固含量沉降",
+              "use": "静置稳定性与持浆窗口"
+            },
+            {
+              "id": "VM-SLURRY-04",
+              "name": "真空脱气与过滤关卡",
+              "use": "气泡/ grit 门禁；头前二次过滤"
+            }
+          ],
+          "management": [
+            "正极制浆严格控水（原料、溶剂、环境露点）",
+            "浆料锅密封与恒温输送；IQC 溶剂水分",
+            "证据锚点：书卷2 第4章：水分对非水悬浮液电位及正极控水（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-US-WELD-001",
+      "card_id": "KC-BOOK-US-WELD-001",
+      "title": "超声波极耳焊不足/过度：剥离失效模式",
+      "short": "超声波极耳焊不足/过度",
+      "mechanism_node": "MT.PROC.ASSY.TAB",
+      "tags": [
+        "ultrasonic-weld",
+        "tab",
+        "underweld",
+        "overweld"
+      ],
+      "keywords": [
+        "超声波",
+        "极耳焊",
+        "剥离",
+        "焊不足",
+        "焊过度",
+        "虚焊",
+        "超声波极耳焊不足",
+        "过度",
+        "剥离失效模式",
+        "ultrasonic-weld",
+        "tab",
+        "underweld",
+        "overweld",
+        "MT.PROC.ASSY.TAB",
+        "KC-BOOK-US-WELD-001",
+        "US-WELD"
+      ],
+      "excerpts": {
+        "mechanism": "超声摩擦清膜→塑性咬合→原子扩散；能量不足则界面未结合，能量过量则上件损伤。 可检验预测：按失效模式分类（未结合/部分黏附/撕裂/纽扣断裂等）调参，目标落在合格撕裂带（书表9-13 思路）。",
+        "diagram": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-US-WELD-001",
+        "card": "极耳-集流体超声焊剥离力偏低或焊点撕裂/粘连声极；出现焊不足或焊过度。",
+        "verify": "盖板/极耳焊接剥离 / 气密性筛查 / 短路/绝缘"
+      },
+      "nodes": [
+        "MT.PROC.ASSY.TAB"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 超声波极耳焊不足/过度",
+          "summary": "超声摩擦清膜→塑性咬合→原子扩散；能量不足则界面未结合，能量过量则上件损伤。 可检验预测：按失效模式分类（未结合/部分黏附/撕裂/纽扣断裂等）调参，目标落在合格撕裂带（书表9-13 思路）。",
+          "chain": [
+            {
+              "id": "MT.PROC.ASSY.TAB",
+              "name": "超声波极耳焊不足/过度",
+              "def": "超声摩擦清膜→塑性咬合→原子扩散；能量不足则界面未结合，能量过量则上件损伤。 可检验预测：按失效模式分类（未结合/部分黏附/撕裂/纽扣断裂等）调参，目标落在合格撕裂带（书表9-13 思路）。",
+              "vars": [
+                "超声波",
+                "极耳焊",
+                "剥离",
+                "焊不足",
+                "焊过度"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "极耳/箔材硬度匹配 → 焊接性",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "声极状态与平行度 → 能量耦合",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "超声摩擦清膜→塑性咬合→原子扩散；能量不足则界面未结合，能量过量则上件损伤。 可检验预测：按失效模式分类（未结合/部分黏附/撕裂/纽扣断裂等）调参，目标落在合格撕裂带（书表9-13 思路）。",
+            "功率-压力-时间-振幅窗口化；软金属防过压",
+            "用失效模式而非单点最大力判级"
+          ],
+          "hint": "推理先落点 MT.PROC.ASSY.TAB，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "装配短路/极耳焊：复用极片主线作工艺上下文（暂无专图）。 · 对应卡 KC-BOOK-US-WELD-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.ASSY.TAB",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-US-WELD-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-US-WELD-001",
+            "title": "超声波极耳焊不足/过度：剥离失效模式",
+            "phenomenon": "极耳-集流体超声焊剥离力偏低或焊点撕裂/粘连声极；出现焊不足或焊过度。",
+            "causes": [
+              "焊不足：功率/压力/时间/振幅不足，氧化膜未破、塑性流不足",
+              "焊过度：静压过大或时间过长，压痕过深甚至熔化粘连撕裂",
+              "异种材料硬度差；仅用最大剥离力无法区分有效连接"
+            ],
+            "mechanism": "超声摩擦清膜→塑性咬合→原子扩散；能量不足则界面未结合，能量过量则上件损伤。 可检验预测：按失效模式分类（未结合/部分黏附/撕裂/纽扣断裂等）调参，目标落在合格撕裂带（书表9-13 思路）。",
+            "risk": "内阻高、虚焊掉极耳、产线复焊损伤极片。",
+            "countermeasures": [
+              "功率-压力-时间-振幅窗口化；软金属防过压",
+              "用失效模式而非单点最大力判级",
+              "薄件在上、硬度较低件接触上声极等工艺惯例（书述）"
+            ],
+            "mechanism_node_id": "MT.PROC.ASSY.TAB",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.PROC.ASSY.TAB"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-WELD-01",
+              "name": "盖板/极耳焊接剥离",
+              "use": "焊不足/过焊失效模式"
+            },
+            {
+              "id": "VM-LEAK-01",
+              "name": "气密性筛查",
+              "use": "壳盖焊漏液"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "短路/绝缘",
+              "use": "飞溅异物短路"
+            }
+          ],
+          "management": [
+            "功率-压力-时间-振幅窗口化；软金属防过压",
+            "用失效模式而非单点最大力判级",
+            "证据锚点：书卷3 §9.3.5 缺陷及预防与表9-13 失效模式（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KC-BOOK-WIND-TENSION-001",
+      "card_id": "KC-BOOK-WIND-TENSION-001",
+      "title": "卷绕张力失控致内部褶皱/螺旋/中心孔反弹",
+      "short": "卷绕张力失控致内部褶皱/螺旋/中心孔反弹",
+      "mechanism_node": "MT.PROC.ASSY.WIND",
+      "tags": [
+        "winding",
+        "tension",
+        "wrinkle",
+        "spiral"
+      ],
+      "keywords": [
+        "卷绕",
+        "张力",
+        "褶皱",
+        "螺旋",
+        "中心孔",
+        "纠偏",
+        "X-ray",
+        "卷绕张力失控致内部褶皱",
+        "中心孔反弹",
+        "winding",
+        "tension",
+        "wrinkle",
+        "spiral",
+        "MT.PROC.ASSY.WIND",
+        "KC-BOOK-WIND-TENSION-001",
+        "WIND-TENSION"
+      ],
+      "excerpts": {
+        "mechanism": "方形卷绕几何导致线速度/张力周期尖峰；过大张力在电芯内部产生过压褶皱，纠偏差则轴向错层成螺旋。 可检验预测：恒张力/逐圈减张力与数字张力控制应压低褶皱与螺旋 X-ray 不良率。",
+        "diagram": "卷绕张力与褶皱落在主线末端。挂载 ASSY.WIND。 · 对应卡 KC-BOOK-WIND-TENSION-001",
+        "card": "卷绕电芯内部褶皱、隔膜中心孔反弹、端面螺旋；方形片式卷针张力类正弦大幅波动。",
+        "verify": "微焦 X 射线覆盖/对齐 / 卷绕后短路/绝缘 / 一致性指标"
+      },
+      "nodes": [
+        "MT.PROC.ASSY.WIND",
+        "MT.FAIL.SC",
+        "MT.PROC.PRESS"
+      ],
+      "panels": {
+        "mechanism": {
+          "title": "机理 · 卷绕张力失控致内部褶皱/螺旋/中心孔反弹",
+          "summary": "方形卷绕几何导致线速度/张力周期尖峰；过大张力在电芯内部产生过压褶皱，纠偏差则轴向错层成螺旋。 可检验预测：恒张力/逐圈减张力与数字张力控制应压低褶皱与螺旋 X-ray 不良率。",
+          "chain": [
+            {
+              "id": "MT.PROC.ASSY.WIND",
+              "name": "卷绕张力失控致内部褶皱/螺旋/中心孔反弹",
+              "def": "方形卷绕几何导致线速度/张力周期尖峰；过大张力在电芯内部产生过压褶皱，纠偏差则轴向错层成螺旋。 可检验预测：恒张力/逐圈减张力与数字张力控制应压低褶皱与螺旋 X-ray 不良率。",
+              "vars": [
+                "卷绕",
+                "张力",
+                "褶皱",
+                "螺旋",
+                "中心孔"
+              ]
+            },
+            {
+              "id": "UP.1",
+              "name": "上游耦合",
+              "def": "MT.PROC.PRESS 极片强韧性 → 抗张力损伤",
+              "vars": []
+            },
+            {
+              "id": "UP.2",
+              "name": "上游耦合",
+              "def": "卷针几何与张力伺服 → 波动幅值",
+              "vars": []
+            }
+          ],
+          "whyFast": [
+            "方形卷绕几何导致线速度/张力周期尖峰；过大张力在电芯内部产生过压褶皱，纠偏差则轴向错层成螺旋。 可检验预测：恒张力/逐圈减张力与数字张力控制应压低褶皱与螺旋 X-ray 不良率。",
+            "张力窗口（书述示例：隔膜约 0.3–1 N，极片约 0.4–1.5 N，需按本线标定）",
+            "卷针公转/凸轮/数字控制抑波动；EPC 纠偏"
+          ],
+          "hint": "推理先落点 MT.PROC.ASSY.WIND，再沿上下游链路展开；本面板为书源卡改写摘要。"
+        },
+        "diagram": {
+          "title": "极片涂布—干燥—辊压—卷绕主线",
+          "caption": "卷绕张力与褶皱落在主线末端。挂载 ASSY.WIND。 · 对应卡 KC-BOOK-WIND-TENSION-001",
+          "src": "assets/diagrams/electrode-coat-dry-press-wind-v0.svg",
+          "nodeId": "MT.PROC.ASSY.WIND",
+          "mapped": true
+        },
+        "card": {
+          "title": "知识卡片 / 失效挂钩",
+          "sample": false,
+          "provenance": "KC-BOOK-WIND-TENSION-001 · 教材改写",
+          "card": {
+            "card_id": "KC-BOOK-WIND-TENSION-001",
+            "title": "卷绕张力失控致内部褶皱/螺旋/中心孔反弹",
+            "phenomenon": "卷绕电芯内部褶皱、隔膜中心孔反弹、端面螺旋；方形片式卷针张力类正弦大幅波动。",
+            "causes": [
+              "张力过大：塑性拉伸、内部褶皱、中心孔反弹",
+              "张力过小：松卷、无法正常卷绕",
+              "纠偏失效：螺旋错位",
+              "恒角速度片式卷针线速度波动大；未预留循环膨胀空间"
+            ],
+            "mechanism": "方形卷绕几何导致线速度/张力周期尖峰；过大张力在电芯内部产生过压褶皱，纠偏差则轴向错层成螺旋。 可检验预测：恒张力/逐圈减张力与数字张力控制应压低褶皱与螺旋 X-ray 不良率。",
+            "risk": "安全与空间利用率下降；负极包覆失效析锂；短路风险。",
+            "countermeasures": [
+              "张力窗口（书述示例：隔膜约 0.3–1 N，极片约 0.4–1.5 N，需按本线标定）",
+              "卷针公转/凸轮/数字控制抑波动；EPC 纠偏",
+              "极耳/头尾贴胶防毛刺刺膜；短路在线检"
+            ],
+            "mechanism_node_id": "MT.PROC.ASSY.WIND",
+            "verification_status": "open",
+            "confidence": 0.62,
+            "source": "literature-book-round1"
+          },
+          "failLinks": [
+            "MT.FAIL.SC",
+            "MT.PROC.PRESS"
+          ]
+        },
+        "verify": {
+          "title": "检测验证与管理",
+          "sourceNote": "方法 stub 对齐 verification-methods-from-book-v1 家族；按 mechanism_node / 卡族映射，非现场实测。",
+          "methods": [
+            {
+              "id": "VM-ASSY-01",
+              "name": "微焦 X 射线覆盖/对齐",
+              "use": "褶皱/螺旋/错位"
+            },
+            {
+              "id": "VM-SHORT-01",
+              "name": "卷绕后短路/绝缘",
+              "use": "张力失控致刺膜风险"
+            },
+            {
+              "id": "VM-CONS-01",
+              "name": "一致性指标",
+              "use": "松紧度差异批次"
+            }
+          ],
+          "management": [
+            "张力窗口（书述示例：隔膜约 0.3–1 N，极片约 0.4–1.5 N，需按本线标定）",
+            "卷针公转/凸轮/数字控制抑波动；EPC 纠偏",
+            "证据锚点：书卷3 §8.1.1 工艺参数与缺陷、图8-5/8-6（OCR 改写）。",
+            "验证状态 open：现场闭环后升 verified/falsified"
+          ]
+        }
+      }
+    }
+  ]
+}
