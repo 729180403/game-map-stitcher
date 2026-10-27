@@ -25,13 +25,14 @@
   <main class="console" id="console">
     <section class="ask-rail" aria-label="提问区">
       <h2 class="section-label">提问</h2>
-      <label class="ask-label" for="ask-input">输入或点选样例</label>
+      <label class="ask-label" for="ask-input">关键词检索知识卡，或点选样例</label>
       <div class="ask-row">
-        <input id="ask-input" type="text" placeholder="例如：注液浸润 / 热封窗口 / 涂布拉丝…" autocomplete="off" />
+        <input id="ask-input" type="text" placeholder="例如：辊压 / 毛刺 / 水分 / 注液浸润…" autocomplete="off" />
         <button type="button" class="btn primary" id="btn-ask">询问</button>
       </div>
+      <div class="search-hits" id="search-hits" hidden></div>
       <div class="sample-list" id="sample-list" role="list"></div>
-      <p class="mock-note">当前为 <strong>book-round1 演示</strong>：样例四栏来自书源改写卡片 / 机理树 / 验证方法 / 示意图（非原文整段粘贴）。</p>
+      <p class="mock-note">当前为 <strong>book-round1 + 卡检索</strong>：保留 3 条样例；可关键词检索 21 张书源知识卡（改写摘要，非原文整段粘贴）。</p>
     </section>
 
     <section class="answer-stage" aria-label="回答分栏">

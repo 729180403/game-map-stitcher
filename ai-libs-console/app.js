@@ -2,7 +2,11 @@ const PANEL_IDS = ["mechanism", "diagram", "card", "verify"];
 
 /** @type {{ questions: any[] } | null} */
 let demo = null;
+/** @type {{ cards: any[] } | null} */
+let cardIndex = null;
 let activeQuestionId = null;
+/** @type {"sample" | "card" | null} */
+let activeKind = null;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -11,6 +15,12 @@ async function loadDemo() {
   const res = await fetch("data/demo.json");
   if (!res.ok) throw new Error(`Failed to load demo.json (${res.status})`);
   demo = await res.json();
+}
+
+async function loadCardIndex() {
+  const res = await fetch("data/card-index.json");
+  if (!res.ok) throw new Error(`Failed to load card-index.json (${res.status})`);
+  cardIndex = await res.json();
 }
 
 function renderSampleList() {
@@ -23,7 +33,10 @@ function renderSampleList() {
     btn.dataset.id = q.id;
     btn.setAttribute("role", "listitem");
     btn.innerHTML = `<span class="short">${escapeHtml(q.short)}</span>${escapeHtml(q.label)}`;
-    btn.addEventListener("click", () => selectQuestion(q.id));
+    btn.addEventListener("click", () => {
+      clearSearchHits();
+      selectQuestion(q.id);
+    });
     list.appendChild(btn);
   }
 }
@@ -40,8 +53,10 @@ function selectQuestion(id, { scroll = true } = {}) {
   const q = demo.questions.find((x) => x.id === id);
   if (!q) return;
   activeQuestionId = id;
+  activeKind = "sample";
 
   $$(".sample-btn").forEach((b) => b.classList.toggle("active", b.dataset.id === id));
+  $$(".search-hit").forEach((b) => b.classList.remove("active"));
   $("#ask-input").value = q.label;
   $("#answer-title").textContent = q.short;
   $("#empty-hint").hidden = true;
@@ -51,6 +66,29 @@ function selectQuestion(id, { scroll = true } = {}) {
   renderDiagram(q.panels.diagram);
   renderCard(q.panels.card);
   renderVerify(q.panels.verify);
+
+  showPanel("mechanism");
+  if (scroll) $("#console")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function selectCard(cardId, { scroll = true, queryText = null } = {}) {
+  const card = cardIndex?.cards?.find((c) => c.id === cardId || c.card_id === cardId);
+  if (!card) return;
+  activeQuestionId = card.id;
+  activeKind = "card";
+
+  $$(".sample-btn").forEach((b) => b.classList.remove("active"));
+  $$(".search-hit").forEach((b) => b.classList.toggle("active", b.dataset.id === card.id));
+  if (queryText != null) $("#ask-input").value = queryText;
+  else if (!$("#ask-input").value.trim()) $("#ask-input").value = card.title;
+  $("#answer-title").textContent = card.short || card.title;
+  $("#empty-hint").hidden = true;
+
+  renderNodeChips(card.nodes);
+  renderMechanism(card.panels.mechanism);
+  renderDiagram(card.panels.diagram);
+  renderCard(card.panels.card);
+  renderVerify(card.panels.verify);
 
   showPanel("mechanism");
   if (scroll) $("#console")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -72,7 +110,7 @@ function renderMechanism(p) {
         <span class="nid">${escapeHtml(c.id)}</span>
         <span class="name">${escapeHtml(c.name)}</span>
         <p class="def">${escapeHtml(c.def)}</p>
-        <p class="def">Vars: ${(c.vars || []).map(escapeHtml).join(" · ")}</p>
+        <p class="def">Vars: ${(c.vars || []).map(escapeHtml).join(" · ") || "—"}</p>
       </li>`
     )
     .join("");
@@ -91,7 +129,9 @@ function renderDiagram(p) {
   const root = $("#panel-diagram");
   root.innerHTML = `
     <h3>${escapeHtml(p.title)}</h3>
-    <p class="summary">挂载 <code class="chip" style="display:inline">${escapeHtml(p.nodeId)}</code></p>
+    <p class="summary">挂载 <code class="chip" style="display:inline">${escapeHtml(p.nodeId)}</code>${
+      p.mapped ? ` <span class="chip map-chip">按节点映射</span>` : ""
+    }</p>
     <div class="diagram-frame">
       <object type="image/svg+xml" data="${escapeHtml(p.src)}" title="${escapeHtml(p.title)}">
         <img src="${escapeHtml(p.src)}" alt="${escapeHtml(p.title)}" />
@@ -175,7 +215,7 @@ function showPanel(name) {
   });
 }
 
-const KEYWORD_HINTS = [
+const SAMPLE_KEYWORD_HINTS = [
   "注液",
   "吸入",
   "浸润",
@@ -193,8 +233,6 @@ const KEYWORD_HINTS = [
   "铅笔道",
   "弯液面",
   "过滤",
-  "辊压",
-  "卷绕",
   "fill",
   "seal",
   "coat",
@@ -208,7 +246,7 @@ function matchQuestion(text) {
     const hay = `${q.label} ${q.short} ${(q.nodes || []).join(" ")} ${q.id}`.toLowerCase();
     let score = 0;
     if (hay.includes(t) || t.includes(q.short.toLowerCase())) score += 5;
-    for (const key of KEYWORD_HINTS) {
+    for (const key of SAMPLE_KEYWORD_HINTS) {
       if (t.includes(key) && hay.includes(key)) score += 2;
     }
     return { q, score };
@@ -217,22 +255,132 @@ function matchQuestion(text) {
   return scored[0]?.score > 0 ? scored[0].q : null;
 }
 
-function onAsk() {
-  const text = $("#ask-input").value;
-  const hit = matchQuestion(text);
-  if (hit) {
-    selectQuestion(hit.id);
+function scoreCard(card, raw) {
+  const t = raw.trim().toLowerCase();
+  if (!t) return 0;
+  const tokens = t.split(/[\s,，、;/|]+/).filter((x) => x.length >= 1);
+  const hay = [
+    card.title,
+    card.short,
+    card.card_id,
+    card.mechanism_node,
+    ...(card.keywords || []),
+    ...(card.tags || []),
+    card.excerpts?.mechanism,
+    card.excerpts?.card,
+    card.excerpts?.verify
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  let score = 0;
+  if (hay.includes(t)) score += 8;
+  if (card.card_id.toLowerCase() === t || card.id.toLowerCase() === t) score += 20;
+  for (const tok of tokens) {
+    if (tok.length < 1) continue;
+    if (hay.includes(tok)) score += tok.length >= 2 ? 3 : 1;
+    for (const kw of card.keywords || []) {
+      const k = String(kw).toLowerCase();
+      if (k === tok) score += 5;
+      else if (k.includes(tok) || tok.includes(k)) score += 2;
+    }
+  }
+  return score;
+}
+
+function searchCards(text, limit = 8) {
+  if (!cardIndex?.cards?.length) return [];
+  const scored = cardIndex.cards
+    .map((c) => ({ c, score: scoreCard(c, text) }))
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score || a.c.id.localeCompare(b.c.id));
+  return scored.slice(0, limit);
+}
+
+function clearSearchHits() {
+  const box = $("#search-hits");
+  if (!box) return;
+  box.hidden = true;
+  box.innerHTML = "";
+}
+
+function renderSearchHits(hits, query) {
+  const box = $("#search-hits");
+  if (!box) return;
+  if (!hits.length) {
+    box.hidden = true;
+    box.innerHTML = "";
     return;
   }
-  $("#empty-hint").hidden = false;
-  const n = demo?.questions?.length ?? 0;
-  $("#empty-hint").textContent = `当前书源 demo 覆盖 ${n} 条样例（注液浸润、热封窗口、涂布拉丝）。请点选样例，或输入含「注液」「热封」「涂布」等关键词。`;
+  box.hidden = false;
+  box.innerHTML = `
+    <p class="search-hits-label">知识卡命中 ${hits.length} / 索引 ${cardIndex?.meta?.count ?? 21}</p>
+    <div class="search-hit-list" role="list"></div>
+  `;
+  const list = box.querySelector(".search-hit-list");
+  for (const { c, score } of hits) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "search-hit";
+    btn.dataset.id = c.id;
+    btn.setAttribute("role", "listitem");
+    const kw = (c.keywords || []).slice(0, 4).join(" · ");
+    btn.innerHTML = `
+      <span class="short">${escapeHtml(c.card_id)} · ${escapeHtml(c.mechanism_node || "")}</span>
+      <span class="hit-title">${escapeHtml(c.title)}</span>
+      <span class="hit-excerpt">${escapeHtml(c.excerpts?.card || c.excerpts?.mechanism || "")}</span>
+      <span class="hit-meta">${escapeHtml(kw)} · score ${score}</span>
+    `;
+    btn.addEventListener("click", () => selectCard(c.id, { queryText: query }));
+    list.appendChild(btn);
+  }
+}
+
+function clearPanels() {
   activeQuestionId = null;
+  activeKind = null;
   PANEL_IDS.forEach((id) => {
     $(`#panel-${id}`).innerHTML = "";
     $(`#panel-${id}`).hidden = true;
   });
   $("#node-chips").hidden = true;
+  $$(".sample-btn").forEach((b) => b.classList.remove("active"));
+}
+
+function onAsk() {
+  const text = $("#ask-input").value;
+  const cardHits = searchCards(text);
+  renderSearchHits(cardHits, text);
+
+  if (cardHits.length) {
+    selectCard(cardHits[0].c.id, { queryText: text });
+    return;
+  }
+
+  const hit = matchQuestion(text);
+  if (hit) {
+    clearSearchHits();
+    selectQuestion(hit.id);
+    return;
+  }
+
+  clearSearchHits();
+  $("#empty-hint").hidden = false;
+  const n = cardIndex?.meta?.count ?? 0;
+  const s = demo?.questions?.length ?? 0;
+  $("#empty-hint").textContent = `未命中。可搜 21 张书源卡关键词（如「辊压」「毛刺」「水分」），或点选 ${s} 条样例。当前索引 ${n} 张卡。`;
+  clearPanels();
+}
+
+function onLiveSearch() {
+  const text = $("#ask-input").value.trim();
+  if (text.length < 1) {
+    clearSearchHits();
+    return;
+  }
+  const hits = searchCards(text, 6);
+  renderSearchHits(hits, text);
 }
 
 function wireUi() {
@@ -240,6 +388,7 @@ function wireUi() {
   $("#ask-input").addEventListener("keydown", (e) => {
     if (e.key === "Enter") onAsk();
   });
+  $("#ask-input").addEventListener("input", onLiveSearch);
 
   $$(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -254,7 +403,7 @@ function wireUi() {
   $$("[data-prompt]").forEach((btn) => {
     btn.addEventListener("click", () => {
       if (!activeQuestionId) {
-        selectQuestion(demo.questions[0].id);
+        if (demo.questions[0]) selectQuestion(demo.questions[0].id);
       }
       const target = btn.dataset.prompt === "diagram" ? "diagram" : "verify";
       showPanel(target);
@@ -263,6 +412,7 @@ function wireUi() {
   });
 
   $("#btn-sample-fill").addEventListener("click", () => {
+    clearSearchHits();
     const fill = demo.questions.find((q) => q.id === "q-fill") || demo.questions[0];
     selectQuestion(fill.id);
   });
@@ -270,13 +420,17 @@ function wireUi() {
 
 async function main() {
   try {
-    await loadDemo();
+    await Promise.all([loadDemo(), loadCardIndex()]);
     renderSampleList();
     wireUi();
+    const note = $(".mock-note");
+    if (note && cardIndex?.meta?.count) {
+      note.innerHTML = `当前为 <strong>book-round1 + 卡检索</strong>：保留 3 条样例；另可关键词检索 <strong>${cardIndex.meta.count}</strong> 张书源知识卡（改写摘要 / 示意图映射 / VM stub）。`;
+    }
   } catch (err) {
     console.error(err);
     $("#empty-hint").hidden = false;
-    $("#empty-hint").textContent = `加载 demo 数据失败：${err.message}。请用本地静态服务器打开（npm start），勿直接 file:// 拦 fetch。`;
+    $("#empty-hint").textContent = `加载数据失败：${err.message}。请用本地静态服务器打开（npm start），勿直接 file:// 拦 fetch。`;
   }
 }
 

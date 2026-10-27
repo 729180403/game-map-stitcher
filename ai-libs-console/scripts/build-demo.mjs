@@ -35,15 +35,16 @@ for (const [, q] of [...byId.entries()].sort((a, b) => a[0].localeCompare(b[0]))
 const demo = {
   meta: {
     product: "AI-LiBs",
-    version: "v1-book-round1",
-    note: "Generated from data/excerpts/* — curated paraphrases of book-round1 store cards / mechanism / VM / diagrams. Not verbatim copyrighted book text.",
+    version: "v1-book-round1-search",
+    note: "Generated from data/excerpts/* — curated paraphrases of book-round1 store cards / mechanism / VM / diagrams. Not verbatim copyrighted book text. Companion: data/card-index.json (21-card keyword search).",
     generatedBy: "scripts/build-demo.mjs",
     storeRefs: [
       "docs/book-ingest-round1-summary.md",
       "docs/mechanism-tree-from-book-v1.md",
       "docs/books/li-ion-mfg-process/cards/",
       "docs/verification-methods-from-book-v1.md",
-      "media/li-ion-diagrams/"
+      "media/li-ion-diagrams/",
+      "docs/qa-web-prototype-search-v1.md"
     ]
   },
   questions
